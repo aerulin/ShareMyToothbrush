@@ -1,0 +1,19 @@
+<div class='container'>
+  <div class='title'>
+    <h1>Those are all the available Toothbrushes</h1>
+  </div>
+
+  <div class='cards-container'>
+    <% @toothbrushes.each do |toothbrush|%>
+      <div class='card'>
+        <h4>Title: <%= toothbrush.title %></h4>
+        <h5>Description: <%= toothbrush.description %></h5>
+        <p>Condition: <%= toothbrush.condition %></p>
+        <p>Price: <%= toothbrush.price %></p>
+        <%= link_to "Book", "#", class:'btn' %>
+      </div>
+    <% end %>
+  </div>
+
+
+</div>
