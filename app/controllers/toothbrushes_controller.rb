@@ -1,0 +1,2 @@
+class ToothbrushesController < ApplicationController
+end
