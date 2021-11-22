@@ -26,7 +26,7 @@ puts 'Creating user'
       description: Faker::Lorem.words(number: rand(20..30)),
       brand: Faker::Company.name,
       user: user,
-      category: Category.new(name: Faker::Emotion.adjective),
+      category: ["Premium", "Eco-friendly", "Vintage", "Famous"].sample,
       price: rand(250)
     )
     toothbrush.save!
