@@ -1,3 +1,20 @@
+<!--
+<% @toothbrushes.each do |toothbrush|%>
+  <div class='card'>
+    <h4>Title: <%= toothbrush.title %></h4>
+    <h5>Description: <%= toothbrush.description %></h5>
+    <p>Condition: <%= toothbrush.condition %></p>
+    <p>Price: <%= toothbrush.price %></p>
+    <%= link_to "Book", "#", class:'btn' %>
+  </div>
+<% end %>
+-->
+
+
+
+
+
+<!--
 <div class='container'>
   <div class='title'>
     <h1>Those are all the available Toothbrushes</h1>
@@ -14,6 +31,31 @@
       </div>
     <% end %>
   </div>
+</div>
+-->
 
 
+
+
+<div id="facilities">
+  <div class="container">
+    <div class="title">
+      <h1>Toothbrushes</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div class="row">
+      <% @toothbrushes.each do |toothbrush|%>
+        <div class="col-md-4">
+            <div class="card text-center">
+              <img src="https://source.unsplash.com/random" class="card-img-top" alt="">
+              <div class="card-body">
+                <h5 class="card-title">Title: <%= toothbrush.title %></h5>
+                <p class="card-text">Description: <%= toothbrush.description %></p>
+                <%= link_to "Book", "#" %>
+              </div>
+            </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
