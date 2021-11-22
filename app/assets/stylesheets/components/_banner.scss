@@ -2,6 +2,20 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  animation-duration: 1.5s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-top: 100%;
+    width: 100%;
+  }
+
+  to {
+    margin-bottom: 0%;
+    width: 100%;
+  }
 }
 
 .banner h1 {
