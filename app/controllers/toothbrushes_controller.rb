@@ -1,4 +1,5 @@
 class ToothbrushesController < ApplicationController
+
   def index
     @toothbrushes = Toothbrush.all
   end
@@ -18,6 +19,6 @@ class ToothbrushesController < ApplicationController
   private
 
   def toothbrush_params
-    params.require(:toothbrush).permit(:title, :description, :condition, :price, :brand, :category_id, :user_id)
+    params.require(:toothbrush).permit(:title, :description, :condition, :price, :brand, :category_id, :user_id, :photo)
   end
 end
