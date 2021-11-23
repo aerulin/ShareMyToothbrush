@@ -9,14 +9,12 @@
     <%= simple_form_for @toothbrush do |f| %>
       <%= f.input :title %>
       <%= f.input :description %>
-      <%= f.input :photo, as: :file %>
-      <%= f.input :price %>
-      <%= f.input :condition %>
       <%= f.input :brand %>
-      <%= f.input :category %>
+      <%= f.input :condition, :collection => ["Hard", "Medium", "Soft"]%>
+      <%= f.input :category, :collection => ["Eco", "Wood", "Electric", "Plastic", "Metal"]%>
+      <%= f.input :price %>
+      <%= f.input :photo, as: :file %>
       <%= f.submit "Submit review", class: "btn btn-primary btn-home" %>
     <% end %>
   </div>
-
-
 </div>
