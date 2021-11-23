@@ -34,30 +34,28 @@
 </div>
 -->
 
-
-
-
-<div id="facilities">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://as1.ftcdn.net/v2/jpg/02/54/15/88/1000_F_254158873_4o1cACXKRRtIaEYEcI1HP2V9F0mzQlRK.jpg);">
   <div class="container">
-    <div class="title">
-      <h1>Toothbrushes</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
+    <h1>Choose your<strong>toothbrush</strong></h1>
+    <p>FInd the right toothbrush for your teeths in the list below!</p>
+  </div>
+</div>
+
     <div class="row">
       <% @toothbrushes.each do |toothbrush|%>
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card text-center">
-            <%=cl_image_tag toothbrush.photo.key, height: 300, width: 400, crop: :fill%>
+            <%=cl_image_tag toothbrush.photo.key, height: 300, crop: :fill%>
               <div class="card-body">
-                <h5 class="card-title">Title: <%= toothbrush.title %></h5>
-                <p class="card-text">Price: <%= toothbrush.price %></p>
-                <p class="card-text">Condition: <%= toothbrush.condition %></p>
-                <p class="card-text">Brand: <%= toothbrush.brand %></p>
-               <p class="btn-bottom"> <%= link_to "Book", "#" %> </p>
+                <h3 class="card-title"><%= toothbrush.title %></h5>
+                <p class="card-text card-price">Price: <%= toothbrush.price %></p>
+                <div class="d-flex container-card-flex card-text-bottom">
+                  <p class="card-text"><span class="color-orange">Condition</span><br> <%= toothbrush.condition %></p>
+                  <p class="card-text"><span class="color-orange">Brand</span><br> <%= toothbrush.brand %></p>
+                </div>
+                  <div class="btn-bottom btn-book"> <%= link_to "Book", "#" %> </div>
               </div>
             </div>
         </div>
       <% end %>
     </div>
-  </div>
-</div>
