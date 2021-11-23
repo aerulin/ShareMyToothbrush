@@ -134,3 +134,65 @@ toothbrush = Toothbrush.new(
 toothbrush.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 toothbrush.save!
 puts 'TB 1 created'
+
+
+puts 'Creating TB 2'
+file = URI.open('https://res.cloudinary.com/dg2an4buq/image/upload/v1637662949/pexels-ricardo-rojas-3588229_bidqwm_vzqsja.jpg')
+toothbrush = Toothbrush.new(
+  title: 'A warrior Toothbrush',
+  condition: 'As good as new',
+  description: 'When I was fighting in Vietnam, this toothbrush saved my life more than once',
+  brand: 'UncleSam',
+  user: john,
+  category: 'Vintage',
+  price: 8
+)
+toothbrush.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+toothbrush.save!
+puts 'TB 2 created'
+
+puts 'Creating TB 3'
+file = URI.open('https://res.cloudinary.com/dg2an4buq/image/upload/v1637662949/used-toothbrush_wzv3mh_swuhio.jpg')
+toothbrush = Toothbrush.new(
+  title: 'Great to brush bushes',
+  condition: 'Poor',
+  description: 'A toothbrush for a tree can only be good for human',
+  brand: 'MyGreenLeaf',
+  user: cetel,
+  category: 'Manual',
+  price: 3
+)
+toothbrush.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+toothbrush.save!
+puts 'TB 3 created'
+
+
+puts 'Creating TB 4'
+file = URI.open('https://res.cloudinary.com/dg2an4buq/image/upload/v1637662949/used-toothbrush-science-photo-library_v7rd7e_tf9l6e.jpg')
+toothbrush = Toothbrush.new(
+  title: 'Professional Toothbrush',
+  condition: 'Acceptable',
+  description: 'The best one to brush the teeth of my chickens',
+  brand: 'ChickenWithTeeth',
+  user: slimane,
+  category: 'Animals',
+  price: 3
+)
+toothbrush.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+toothbrush.save!
+puts 'TB 4 created'
+
+puts 'Creating TB 5'
+file = URI.open('https://res.cloudinary.com/dg2an4buq/image/upload/v1637662950/old_used_toothbrush_with_worn_out_bristles_g8lzpd_gnr709.webp')
+toothbrush = Toothbrush.new(
+  title: 'My go to Toothbrush',
+  condition: 'Great',
+  description: "Day and night I feel like I'm brushin' brushin' and brushin'",
+  brand: 'Colgate',
+  user: slimane,
+  category: 'Rare',
+  price: 12
+)
+toothbrush.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+toothbrush.save!
+puts 'TB 5 created'
