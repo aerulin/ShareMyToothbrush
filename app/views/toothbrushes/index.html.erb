@@ -47,7 +47,7 @@
       <% @toothbrushes.each do |toothbrush|%>
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card text-center">
-              <img src="https://source.unsplash.com/random" class="card-img-top" alt="">
+            <%=cl_image_tag toothbrush.photo.key, height: 300, width: 400, crop: :fill%>
               <div class="card-body">
                 <h5 class="card-title">Title: <%= toothbrush.title %></h5>
                 <p class="card-text">Description: <%= toothbrush.description %></p>

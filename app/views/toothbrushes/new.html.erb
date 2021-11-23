@@ -9,6 +9,7 @@
     <%= simple_form_for @toothbrush do |f| %>
       <%= f.input :title %>
       <%= f.input :description %>
+      <%= f.input :photo, as: :file %>
       <%= f.input :price %>
       <%= f.input :condition %>
       <%= f.input :brand %>
