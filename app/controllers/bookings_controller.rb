@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.where(user_id: current_user.id)
+    @toothbrush = Toothbrush.all
   end
 
   def new
