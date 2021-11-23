@@ -15,7 +15,7 @@
               <button class="btn btn-dark btn-rounded mr-1" data-toggle="tooltip" title="" data-original-title="Add to cart">
                   <i class="fa fa-shopping-cart"></i>
               </button>
-              <button class="btn btn-primary btn-rounded">Book now</button>
+              <%= link_to"Book now", new_toothbrush_booking_path(@toothbrush), class: "btn btn-primary btn-rounded"%>
               <h3 class="box-title mt-5">More infos</h3>
               <ul class="list-unstyled">
                   <li><i class="fa fa-check text-success"></i>Condition: <%= @toothbrush.condition %></li>

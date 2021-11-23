@@ -1,0 +1,7 @@
+<h1>Your bookings</h1>
+
+<% @bookings.each do |booking| %>
+<p>Booking reference: <%= booking.id %> </p>
+<p>Start date: <%= booking.start_date %> </p>
+<p>End date: <%= booking.end_date %> </p>
+<% end %>
