@@ -119,3 +119,18 @@ cetel = User.new(
 )
 cetel.save!
 puts 'Created Cetel !'
+
+puts 'Creating TB 1'
+file = URI.open('https://res.cloudinary.com/dg2an4buq/image/upload/v1637662951/360_F_295136365_8FlBKW1zOvvoT13Uwa3NsJ2tiguWoIhn_si6eo5_cqvf4y.jpg')
+toothbrush = Toothbrush.new(
+  title: 'My lovely Toothbrush',
+  condition: 'Acceptable',
+  description: 'This is a very nice toothbrush that helped me a lot',
+  brand: 'Fluodent',
+  user: catherine,
+  category: 'Vintage',
+  price: 7
+)
+toothbrush.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+toothbrush.save!
+puts 'TB 1 created'

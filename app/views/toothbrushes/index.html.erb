@@ -50,7 +50,9 @@
             <%=cl_image_tag toothbrush.photo.key, height: 300, width: 400, crop: :fill%>
               <div class="card-body">
                 <h5 class="card-title">Title: <%= toothbrush.title %></h5>
-                <p class="card-text">Description: <%= toothbrush.description %></p>
+                <p class="card-text">Price: <%= toothbrush.price %></p>
+                <p class="card-text">Condition: <%= toothbrush.condition %></p>
+                <p class="card-text">Brand: <%= toothbrush.brand %></p>
                <p class="btn-bottom"> <%= link_to "Book", "#" %> </p>
               </div>
             </div>
