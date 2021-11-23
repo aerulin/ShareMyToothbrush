@@ -1,6 +1,7 @@
 class ToothbrushesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
+
   def index
     @toothbrushes = Toothbrush.all
   end
@@ -11,8 +12,8 @@ class ToothbrushesController < ApplicationController
 
   def create
     @toothbrush = Toothbrush.new(toothbrush_params)
-    # @user = User.find(params[:user_id])
-    # @toothbrush.user = @user
+    @toothbrush.user = current_user
+    raise
     @toothbrush.save!
     redirect_to toothbrushes_path
   end
@@ -20,6 +21,6 @@ class ToothbrushesController < ApplicationController
   private
 
   def toothbrush_params
-    params.require(:toothbrush).permit(:title, :description, :condition, :price, :brand, :category_id, :user_id)
+    params.require(:toothbrush).permit(:title, :description, :condition, :price, :brand, :category_id, :user_id, :photo)
   end
 end
