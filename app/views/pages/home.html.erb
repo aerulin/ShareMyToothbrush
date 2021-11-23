@@ -1,16 +1,47 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://as1.ftcdn.net/v2/jpg/02/54/15/88/1000_F_254158873_4o1cACXKRRtIaEYEcI1HP2V9F0mzQlRK.jpg);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://as1.ftcdn.net/v2/jpg/02/54/15/88/1000_F_254158873_4o1cACXKRRtIaEYEcI1HP2V9F0mzQlRK.jpg);height:80vh;">
   <div class="container">
     <h1>Share my <strong>toothbrush</strong></h1>
     <p>Find the right toothbrush you need around the world, or rent yours to earn money!</p>
-    <a class="btn btn-primary btn-home" href="#">Be ecologic, share your toothbrush!</a>
+    <a class="btn btn-primary btn-home btn-soso" href="#">Be ecologic, share your toothbrush!</a>
   </div>
 </div>
 
-<h2>All listings available</h2>
-<p> Liste de toutes les annonces sous forme de cards</p>
+<h2>Newest listings</h2>
+<div class="row container-flex">
+  <% @toothbrushes.each do |toothbrush|%>
+    <div class="card-trip">
+      <%=cl_image_tag toothbrush.photo.key, crop: :fill%>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= toothbrush.title %></h2>
+          <p><%= toothbrush.condition %></p>
+        </div>
+        <h2 class="card-trip-pricing"><%= toothbrush.price %> CHF</h2>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
+    </div>
+  <%end%>
+</div>
 
 
-<div class="container-center"><a href="/toothbrushes/new" class="btn btn-primary btn-home">Post an add and share your toothbrush!</a></div>
+<div class="container-center" style="margin:40px 0;text-align:center"><a href="/toothbrushes/new" class="btn btn-home btn-primary btn-soso">Post an add and share your toothbrush!</a></div>
+
+<h2>All listings</h2>
+<div class="row container-flex">
+  <% @toothbrushes_list.each do |toothbrush|%>
+    <div class="card-trip" style="margin-top:20px">
+      <%=cl_image_tag toothbrush.photo.key, crop: :fill%>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= toothbrush.title %></h2>
+          <p><%= toothbrush.condition %></p>
+        </div>
+        <h2 class="card-trip-pricing"><%= toothbrush.price %> CHF</h2>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
+    </div>
+  <%end%>
+</div>
 
 <h2>Categories</h2>
 <p> cards fond image avec les différentes catégories ou autre</p>
