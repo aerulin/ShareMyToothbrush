@@ -6,6 +6,11 @@ class ToothbrushesController < ApplicationController
     @toothbrushes = Toothbrush.all
   end
 
+  def show
+    @toothbrush = Toothbrush.find(params[:id])
+    @user = User.find(@toothbrush.user_id)
+  end
+
   def new
     @toothbrush = Toothbrush.new
   end
