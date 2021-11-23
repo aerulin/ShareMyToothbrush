@@ -36,11 +36,25 @@
   color: #0c7f90;
   text-decoration: none;
   font-size: 15px;
-  margin-top: auto;
+  margin-bottom: 15px;
   font-weight: 600;
+    display:inline-block;
 }
 
 .card-body a:hover {
   color: #63a6b0;
   text-decoration: none;
+}
+
+
+.btn-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    bottom: 10px;
+}
+
+.card-text{
+  margin-bottom:70px;
 }

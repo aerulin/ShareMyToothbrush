@@ -45,13 +45,13 @@
     </div>
     <div class="row">
       <% @toothbrushes.each do |toothbrush|%>
-        <div class="col-md-4">
+        <div class="col-md-4 d-flex align-items-stretch">
             <div class="card text-center">
               <img src="https://source.unsplash.com/random" class="card-img-top" alt="">
               <div class="card-body">
                 <h5 class="card-title">Title: <%= toothbrush.title %></h5>
                 <p class="card-text">Description: <%= toothbrush.description %></p>
-                <%= link_to "Book", "#" %>
+               <p class="btn-bottom"> <%= link_to "Book", "#" %> </p>
               </div>
             </div>
         </div>
