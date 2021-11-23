@@ -1,0 +1,50 @@
+.card{
+    border-radius:10px;
+  img{
+    border-radius: 10px 10px 0 0;
+  }
+}
+
+.card-title{
+    font-size:32px;
+    font-weight:bold;
+  }
+
+  .card-price{
+    position:absolute;
+    top:0;
+    right:0;
+    background-color:#E78217;
+    padding:5px 15px;
+    border-radius:10px;
+    color:white;
+    font-size:22px;
+  }
+
+  .color-orange{
+    color:#E78217;
+  }
+
+  .card-text{
+    font-size:20px;
+    margin-bottom:10px!important;
+  }
+
+  .container-card-flex{
+    justify-content:space-between;
+    padding:0 20px;
+  }
+
+
+  .btn-book a{
+      background-color:#058ED9;
+      color: white;
+      font-size:25px;
+      padding:5px 50px;
+      border-radius:8px;
+    }
+
+
+  .container-btn{
+    text-align:center;
+  }
