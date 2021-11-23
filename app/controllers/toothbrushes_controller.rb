@@ -11,7 +11,7 @@ class ToothbrushesController < ApplicationController
   def create
     @toothbrush = Toothbrush.new(toothbrush_params)
     @toothbrush.user = current_user
-    raise
+    # raise
     @toothbrush.save!
     redirect_to toothbrushes_path
   end
