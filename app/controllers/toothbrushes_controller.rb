@@ -3,6 +3,10 @@ class ToothbrushesController < ApplicationController
     @toothbrushes = Toothbrush.all
   end
 
+  def show
+    @toothbrush = Toothbrush.find(params[:id])
+  end
+
   def new
     @toothbrush = Toothbrush.new
   end
