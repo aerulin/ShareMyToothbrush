@@ -2,11 +2,10 @@
   <div class="card">
     <div class="card-body">
         <h3 class="card-title"><%= @toothbrush.title %></h3>
-        <h6 class="card-subtitle">subtitle</h6>
         <div class="row">
           <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="white-box text-center">
-              <img src="https://via.placeholder.com/430x430/00CED1/000000" class="img-responsive">
+            <%=cl_image_tag @toothbrush.photo.key, height: 400, width: 400, crop: :fill %>
             </div>
           </div>
           <div class="col-lg-8 col-md-6 col-sm-6">
