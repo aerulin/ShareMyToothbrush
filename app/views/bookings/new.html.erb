@@ -1,0 +1,15 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://as1.ftcdn.net/v2/jpg/02/54/15/88/1000_F_254158873_4o1cACXKRRtIaEYEcI1HP2V9F0mzQlRK.jpg);">
+  <div class="container">
+    <h1>Create a booking request</h1>
+    <p>Fill the form and enjoy a great toothbrush!</p>
+  </div>
+</div>
+<div class='container container-new-form'>
+  <div class="form-container">
+    <%= simple_form_for [ @toothbrush, @booking ] do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.submit "Send request", class: "btn btn-primary btn-home" %>
+    <% end %>
+  </div>
+</div>

@@ -4,4 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :toothbrushes, dependent: :delete_all
+  has_many :bookings, dependent: :delete_all
 end
