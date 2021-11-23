@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 2021_11_22_162626) do
     t.string "last_name"
     t.string "address"
     t.string "email"
-    t.string "password"
     t.string "photo_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
