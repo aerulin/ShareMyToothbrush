@@ -1,4 +1,8 @@
 class BookingsController < ApplicationController
+  def index
+    @bookings = Booking.where(user_id: current_user.id)
+  end
+
   def new
     @booking = Booking.new
     @toothbrush = Toothbrush.find(params[:toothbrush_id])
@@ -10,7 +14,7 @@ class BookingsController < ApplicationController
     @toothbrush = Toothbrush.find(params[:toothbrush_id])
     @booking.toothbrush = @toothbrush
     @booking.save!
-    redirect_to toothbrush_path(@toothbrush)
+    redirect_to toothbrush_bookings_path(@toothbrush)
   end
 
   private
