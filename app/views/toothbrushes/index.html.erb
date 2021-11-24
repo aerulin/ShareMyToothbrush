@@ -49,7 +49,8 @@
             <div class="card text-center" style="overflow:hidden">
             <%=cl_image_tag toothbrush.photo.key, height: 300, crop: :fill%>
               <div class="card-body">
-                <h3 class="card-title"><%= toothbrush.title %></h5>
+                <h3 class="card-title"><%= toothbrush.title %></h3>
+                <p class="card-text"><%= toothbrush.user.first_name %></p>
                 <p class="card-text card-price">Price: <%= toothbrush.price %> CHF</p>
                 <div class="d-flex container-card-flex card-text-bottom">
                   <p class="card-text"><span class="color-orange">Condition</span><br> <%= toothbrush.condition %></p>
