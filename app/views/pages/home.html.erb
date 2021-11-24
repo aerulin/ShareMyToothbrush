@@ -70,6 +70,7 @@
         <div>
           <h2><%= toothbrush.title %></h2>
           <p><%= toothbrush.condition %></p>
+          <p><%= link_to "See more", toothbrush_path(toothbrush)%></p>
         </div>
         <h2 class="card-trip-pricing"><%= toothbrush.price %> CHF</h2>
         <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
