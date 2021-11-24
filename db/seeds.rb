@@ -29,7 +29,8 @@ require 'faker'
 
 
 # User Creation
-
+puts "Cleaning Booking database..."
+Booking.destroy_all
 puts "Cleaning User database..."
 User.destroy_all
 puts "All users deleted"
