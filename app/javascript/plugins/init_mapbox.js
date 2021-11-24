@@ -23,7 +23,6 @@ const initMapbox = () => {
     });
   }
   fitMapToMarkers(map, markers);
-  console.log(markers)
 };
 
 export { initMapbox };

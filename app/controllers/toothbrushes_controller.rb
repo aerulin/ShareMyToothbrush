@@ -5,13 +5,12 @@ class ToothbrushesController < ApplicationController
     @toothbrushes = Toothbrush.all
 
     # For map
-    @flats = Flat.all
-
+    users = User.all
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
-    @markers = @flats.geocoded.map do |flat|
+    @markers = users.geocoded.map do |user|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: user.latitude,
+        lng: user.longitude
       }
     end
   end
