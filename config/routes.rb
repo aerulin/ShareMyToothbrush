@@ -4,5 +4,10 @@ Rails.application.routes.draw do
   resources :toothbrushes, only: [:new, :create, :index, :show] do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:index, :destroy]
+  resources :bookings, only: [:index, :destroy, :validate] do
+      collection do
+        get 'validate'
+        get 'decline'
+      end
+    end
 end
