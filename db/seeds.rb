@@ -52,7 +52,7 @@ puts 'Creating Jacques'
 jacques = User.new(
   first_name: 'Jacques',
   last_name: 'Chichi',
-  address: 'Rue de Courcelles, Paris, France',
+  address: 'lieu-dit Tuilerie, 01330 VILLARS LES DOMBES, France',
   email: 'jacques@gmail.com',
   password: 'jacques',
   photo_url: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
@@ -76,7 +76,7 @@ puts 'Creating Patrick'
 patrick = User.new(
   first_name: 'Patrick',
   last_name: 'Konattendpas',
-  address: 'Place Rossetti , Nice, France',
+  address: '245 chem Eperon, 01160 SAINT MARTIN DU MONT, France',
   email: 'patrick@gmail.com',
   password: 'patrick',
   photo_url: 'https://arc-anglerfish-eu-central-1-prod-leparisien.s3.amazonaws.com/public/WDSEQZ3E27V37MKMD5GZ5XSV4U.jpg',
@@ -112,7 +112,7 @@ puts 'Creating Cetel'
 cetel = User.new(
   first_name: 'Cetel',
   last_name: 'Em',
-  address: 'Route des Buissons , Palavas-les-Flots, France', # Garder palavas-les-flots si possible
+  address: '48 Rue Melgueil, 34250 Palavas-les-Flots, France', # Garder palavas-les-flots si possible
   email: 'cetel@gmail.com',
   password: 'cetelem',
   photo_url: 'https://images.rtl.fr/~c/770v513/rtl/www/1179101-le-bonhomme-cetelem.jpg',
