@@ -1,7 +1,6 @@
 class ToothbrushesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
-
   def index
     @toothbrushes = Toothbrush.all
   end
@@ -19,8 +18,12 @@ class ToothbrushesController < ApplicationController
     @toothbrush = Toothbrush.new(toothbrush_params)
     @toothbrush.user = current_user
     # raise
-    @toothbrush.save!
-    redirect_to toothbrushes_path
+    @toothbrush.save
+    if @toothbrush.save
+      redirect_to toothbrushes_path
+    else
+      render :new
+    end
   end
 
   private
