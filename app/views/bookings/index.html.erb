@@ -67,10 +67,10 @@
                 <p class="card-text"><span class="color-orange">End date</span><br> <%= booking.end_date %></p>
                 <p class="card-text"><span class="color-orange">Booking lenght</span><br> <%= booking_length.to_i %> days</p>
                 <p class="card-text"><span class="color-orange">Your revenue</span><br> <%= booking_length.to_i * booking.toothbrush.price.to_i %> CHF</p>
-                <% if status =='pending' %>
+                <% if status =='⏳ pending' %>
                   <%= link_to "Accept",validate_bookings_path(booking), class:'btn btn-success' %>
                   <%= link_to "Decline",decline_bookings_path(booking), class:'btn btn-danger' %>
-                <% elsif status =='confirmed' %>
+                <% elsif status =='✔️ confirmed' %>
                   <%= link_to "Decline*",decline_bookings_path(booking), class:'btn btn-danger' %>
                 <% else %>
                   <p class='bg-light'>Your already <strong>declined</strong> this request.</p>
