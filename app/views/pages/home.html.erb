@@ -7,40 +7,46 @@
 </div>
 
 <!--template responsive une fois rempli avec contenu desiré juste mettre 100vh est c'est tout bon :) normalement... -->
-<div class="container">
+<div class="container container-superpose">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-3">
-      <div class="card">
-        <p>i am a logo <img></p>
-        <h2>Eco-friendly</h2>
-        <p>lorem ipsum</p>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card" id="icon-home">
+        <%= image_tag "icons/ecology.png", alt: "", width: 150 %>
+        <h2>Eco-Friendly</h2>
+        <p>Use someone else's toothbrush instead of buying a new one, and make something good for our planet earth.</p>
       </div>
     </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-      <div class="card">
-        <p>i am a logo <img></p>
-        <h2>Eco-friendly</h2>
-        <p>lorem ipsum</p>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card" id="icon-home">
+        <%= image_tag "icons/icon-bacteria.png", alt: "", width: 150 %>
+        <h2>Collective Immunity</h2>
+        <p>Rent your toothbrush: share your saliva and bacteria with your new buddy. Let his immune system grows and becomes stronger!</p>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-3">
-      <div class="card">
-        <p>i am a logo <img></p>
-        <h2>Eco-friendly</h2>
-        <p>lorem ipsum</p>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-3">
-      <div class="card">
-        <p>i am a logo <img></p>
-        <h2>Eco-friendly</h2>
-        <p>lorem ipsum</p>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card" id="icon-home">
+        <%= image_tag "icons/nettoyage-dent", alt: "", width: 150 %>
+        <h2> Select your type</h2>
+        <p>Choose a soft one when you have sensitives gums, or an electric one when you need a deep complete cleaning before meeting your next Tinder's date.</p>
       </div>
     </div>
   </div>
 </div>
 
-<h2>Newest listings</h2>
+<div class="container container-text">
+  <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+   totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+    explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+    magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+     consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+      Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+      Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat
+      quo voluptas nulla pariatur?"</p>
+  </div>
+
+  <div class="container-center" style="margin:40px 0;text-align:center"><a href="/toothbrushes/new" class="btn btn-home btn-primary btn-soso">Post an add and share your toothbrush!</a></div>
+
+<h2 class="title-homepage">Newest listings</h2>
 <div class="row container-flex">
   <% @toothbrushes.each do |toothbrush|%>
     <div class="card-trip">
@@ -49,6 +55,7 @@
         <div>
           <h2><%= toothbrush.title %></h2>
           <p><%= toothbrush.condition %></p>
+          <p><%= link_to "See more", toothbrush_path(toothbrush) %></p>
         </div>
         <h2 class="card-trip-pricing"><%= toothbrush.price %> CHF</h2>
         <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
@@ -57,8 +64,6 @@
   <%end%>
 </div>
 
-
-<div class="container-center" style="margin:40px 0;text-align:center"><a href="/toothbrushes/new" class="btn btn-home btn-primary btn-soso">Post an add and share your toothbrush!</a></div>
 
 <h2>All listings</h2>
 <div class="row container-flex">
