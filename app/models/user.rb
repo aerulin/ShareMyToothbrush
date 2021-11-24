@@ -4,4 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :toothbrushes, dependent: :delete_all
+
+  # For map
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
