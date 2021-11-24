@@ -185,7 +185,7 @@ puts 'TB 4 created'
 puts 'Creating TB 5'
 file = URI.open('https://res.cloudinary.com/dg2an4buq/image/upload/v1637662950/old_used_toothbrush_with_worn_out_bristles_g8lzpd_gnr709.webp')
 toothbrush = Toothbrush.new(
-  title: 'My go to Toothbrush',
+  title: 'My go-to Toothbrush that I love',
   condition: 'Great',
   description: "Day and night I feel like I'm brushin' brushin' and brushin'",
   brand: 'Colgate',
