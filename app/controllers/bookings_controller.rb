@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.where(user_id: current_user.id)
+    @bookings_owner = Booking.joins(:toothbrush).where(toothbrushes: { user_id: current_user.id })
   end
 
   def new
