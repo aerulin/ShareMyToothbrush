@@ -34,10 +34,10 @@
 </div>
 -->
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://as1.ftcdn.net/v2/jpg/02/54/15/88/1000_F_254158873_4o1cACXKRRtIaEYEcI1HP2V9F0mzQlRK.jpg);">
+<div class="banner banner-pages" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://as1.ftcdn.net/v2/jpg/02/54/15/88/1000_F_254158873_4o1cACXKRRtIaEYEcI1HP2V9F0mzQlRK.jpg);">
   <div class="container">
-    <h1>Choose your<strong>toothbrush</strong></h1>
-    <p>FInd the right toothbrush for your teeths in the list below!</p>
+    <h1>Choose your <strong>toothbrush</strong></h1>
+    <p>Find the right toothbrush for your teeths in the list below!</p>
   </div>
 </div>
 
@@ -46,11 +46,11 @@
     <div class="row">
       <% @toothbrushes.each do |toothbrush|%>
         <div class="col-md-4 align-items-stretch">
-            <div class="card text-center">
+            <div class="card text-center" style="overflow:hidden">
             <%=cl_image_tag toothbrush.photo.key, height: 300, crop: :fill%>
               <div class="card-body">
                 <h3 class="card-title"><%= toothbrush.title %></h5>
-                <p class="card-text card-price">Price: <%= toothbrush.price %></p>
+                <p class="card-text card-price">Price: <%= toothbrush.price %> CHF</p>
                 <div class="d-flex container-card-flex card-text-bottom">
                   <p class="card-text"><span class="color-orange">Condition</span><br> <%= toothbrush.condition %></p>
                   <p class="card-text"><span class="color-orange">Brand</span><br> <%= toothbrush.brand %></p>
