@@ -1,7 +1,9 @@
 .card{
     border-radius:10px;
+    position: static!important;
   img{
     border-radius: 10px 10px 0 0;
+    width:100%;
   }
 }
 
@@ -12,9 +14,20 @@
 
   .card-price{
     position:absolute;
+    top:20px;
+    right:25px;
+    background-color:#E78217;
+    padding:5px 15px;
+    border-radius:10px;
+    color:white;
+    font-size:22px;
+  }
+
+  .card-status{
+    position:absolute;
     top:0;
     right:0;
-    background-color:#E78217;
+    background-color:#b4b4b4;
     padding:5px 15px;
     border-radius:10px;
     color:white;

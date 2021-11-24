@@ -10,7 +10,7 @@ h2{
   font-family: 'Poppins', sans-serif;
   font-size:40px;
   font-weight:bold;
-  margin-top:20px;
+  margin-top:50px;
 }
 
 .container-center{
@@ -19,4 +19,60 @@ h2{
 
 .container-flex{
   display:flex;
+}
+
+/*ICONS*/
+
+#icon-home{
+  text-align:center;
+  background-color: rgba(0,0,0,0);
+  border:0;
+}
+
+.card{
+  margin: 0 10px;
+  h2{
+    font-size:30px;
+    margin-bottom:20px;
+  }
+
+  img{
+      margin: 0 auto;
+  }
+
+  p{
+    font-size:18px;
+  }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity:0;
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+.container-superpose{
+  background:white;
+  margin-top:-30px;
+  box-shadow:5px 5px 10px #e7e7e7;
+  border-radius:8px;
+  animation-delay: 1.5s;
+  animation-duration: 3s;
+  animation-name: fadeInUp;
+}
+
+/*TEXT_INTRO*/
+
+.container-text{
+  font-size:20px;
+  line-height:1.8em;
+  text-align:center;
+  padding: 40px 0;
+  margin:0 auto;
 }

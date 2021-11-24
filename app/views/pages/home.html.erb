@@ -6,7 +6,43 @@
   </div>
 </div>
 
-<h2>Newest listings</h2>
+<!--template responsive une fois rempli avec contenu desiré juste mettre 100vh est c'est tout bon :) normalement... -->
+<div class="container container-superpose">
+  <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card" id="icon-home">
+        <%= image_tag "icons/ecology.png", alt: "", width: 150 %>
+        <h2>Eco-Friendly</h2>
+        <p>Use someone else's toothbrush instead of buying a new one, and make something good for our planet earth.</p>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card" id="icon-home">
+        <%= image_tag "icons/icon-bacteria.png", alt: "", width: 150 %>
+        <h2>Collective Immunity</h2>
+        <p>Rent your toothbrush: share your saliva and bacteria with your new buddy. Let his immune system grows and becomes stronger!</p>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card" id="icon-home">
+        <%= image_tag "icons/nettoyage-dent", alt: "", width: 150 %>
+        <h2> Select your type</h2>
+        <p>Choose a soft one when you have sensitives gums, or an electric one when you need a deep complete cleaning before meeting your next Tinder's date.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container container-text">
+  <p>Welcome to ShareMyToothBrush.com! On this plateform you can easily rent your toothbrush, or find the perfect one for you, for a determined period!
+  Find the toothbrush you need, wherever you need it! Choose between differents categories, status or prices, near your actual position.
+  Use it for a day or more, and then bring it back to his owner. Test as many as toothbrushes you want, without buying anything, just renting!
+  <br>Enjoy!</p>
+  </div>
+
+  <div class="container-center" style="margin:40px 0;text-align:center"><a href="/toothbrushes/new" class="btn btn-home btn-primary btn-soso">Post an add and share your toothbrush!</a></div>
+
+<h2 class="title-homepage">Newest listings</h2>
 <div class="row container-flex">
   <% @toothbrushes.each do |toothbrush|%>
     <div class="card-trip">
@@ -15,6 +51,7 @@
         <div>
           <h2><%= toothbrush.title %></h2>
           <p><%= toothbrush.condition %></p>
+          <p><%= link_to "See more", toothbrush_path(toothbrush) %></p>
         </div>
         <h2 class="card-trip-pricing"><%= toothbrush.price %> CHF</h2>
         <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
@@ -23,8 +60,6 @@
   <%end%>
 </div>
 
-
-<div class="container-center" style="margin:40px 0;text-align:center"><a href="/toothbrushes/new" class="btn btn-home btn-primary btn-soso">Post an add and share your toothbrush!</a></div>
 
 <h2>All listings</h2>
 <div class="row container-flex">
@@ -35,6 +70,7 @@
         <div>
           <h2><%= toothbrush.title %></h2>
           <p><%= toothbrush.condition %></p>
+          <p><%= link_to "See more", toothbrush_path(toothbrush)%></p>
         </div>
         <h2 class="card-trip-pricing"><%= toothbrush.price %> CHF</h2>
         <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
@@ -43,5 +79,15 @@
   <%end%>
 </div>
 
-<h2>Categories</h2>
-<p> cards fond image avec les différentes catégories ou autre</p>
+<h2>Popular status</h2>
+<div style="display:flex;justify-content:space-around;margin-bottom:50px">
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://as1.ftcdn.net/v2/jpg/04/68/42/64/1000_F_468426405_whUt1lQn9VHNXFwVQpnqkUQnRtLGyPht.jpg)">
+  New
+</div>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://as2.ftcdn.net/v2/jpg/02/29/87/43/1000_F_229874341_QxzTtvmkGqCTan0hAjjTKU6NzALg7NKO.jpg)">
+  Acceptable
+</div>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://as1.ftcdn.net/v2/jpg/04/40/82/22/1000_F_440822211_AWEemeEMtLTfjfn0KrbkASQqjj28uKiM.jpg)">
+  Poor
+</div>
+</div>
