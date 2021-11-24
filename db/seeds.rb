@@ -88,7 +88,7 @@ puts 'Creating Slimane'
 slimane = User.new(
   first_name: 'Slimane',
   last_name: 'Pillierdelascep',
-  address: '2005c Corniche El Nil , Le Caire, Egypte',
+  address: 'Grande Rue, 01350 CULOZ, France',
   email: 'slimane@gmail.com',
   password: 'slimane',
   photo_url: 'https://fr.web.img3.acsta.net/medias/nmedia/18/35/95/94/18473129.jpg',
@@ -100,7 +100,7 @@ puts 'Creating John'
 john = User.new(
   first_name: 'John',
   last_name: 'Rambo',
-  address: 'Motel Phnom Yaklom , Pleiku, Vietnam',
+  address: '245 chem Eperon, 01160 SAINT MARTIN DU MONT, France',
   email: 'john@gmail.com',
   password: 'johnrambo',
   photo_url: 'https://www.rts.ch/2019/09/18/12/34/10718588.image?w=1280&h=720',
