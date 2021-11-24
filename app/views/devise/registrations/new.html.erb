@@ -20,20 +20,24 @@
                   autofocus: true,
                   input_html: { autocomplete: "address" }%>
 
-
-
       <%= f.input :email,
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "email" }%>
+
       <%= f.input :password,
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                   input_html: { autocomplete: "new-password" } %>
+
       <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
+
+      <%= f.input :image, as: :file %>
     </div>
+
+
 
     <div class="form-actions">
     <div class="btn btn-primary btn-soso">
