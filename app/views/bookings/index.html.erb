@@ -19,6 +19,7 @@
                   <p class="card-text"><span class="color-orange">End date</span><br> <%= booking.end_date %></p>
                   <p class="card-text"><span class="color-orange">Booking lenght</span><br> <%= booking_length.to_i %> days</p>
                   <p class="card-text"><span class="color-orange">Booking lenght</span><br> <%= booking_length.to_i * booking.toothbrush.price.to_i %> CHF</p>
+                  <%= link_to "🗑 Delete",booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
                 </div>
               </div>
             </div>
