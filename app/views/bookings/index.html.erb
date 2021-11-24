@@ -16,11 +16,11 @@
   <div class="row">
     <% @bookings.each do |booking|%>
       <% if booking.status %>
-        <% status = 'confirmed' %>
+        <% status = '✔️ confirmed' %>
       <% elsif booking.status == nil %>
-        <% status = 'pending' %>
+        <% status = '⏳ pending' %>
       <% else booking.status == false %>
-      <% status = 'declined' %>
+        <% status = '⤫ declined' %>
       <% end %>
     <% booking_length = booking.end_date - booking.start_date %>
       <div class="col-md-4 align-items-stretch">
