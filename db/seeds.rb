@@ -40,7 +40,7 @@ puts 'Creating Catherine'
 catherine = User.new(
   first_name: 'Catherine',
   last_name: 'Leduc',
-  address: 'Route des Faisans, Renens, Suisse',
+  address: 'Rue de Lausanne 33, Renens, Suisse',
   email: 'catherine@gmail.com',
   password: 'catherine',
   photo_url: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
@@ -52,7 +52,7 @@ puts 'Creating Jacques'
 jacques = User.new(
   first_name: 'Jacques',
   last_name: 'Chichi',
-  address: 'Route Elysée, Paris, France',
+  address: 'lieu-dit Tuilerie, 01330 VILLARS LES DOMBES, France',
   email: 'jacques@gmail.com',
   password: 'jacques',
   photo_url: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
@@ -64,7 +64,7 @@ puts 'Created Jacques !'
 antoine = User.new(
   first_name: 'Antoine',
   last_name: 'Leblond',
-  address: 'Route des Coiffeurs, Genève, Suisse',
+  address: 'Boulevard Carl-Vogt 55, Genève, Suisse',
   email: 'antoine@gmail.com',
   password: 'antoine',
   photo_url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
@@ -76,7 +76,7 @@ puts 'Creating Patrick'
 patrick = User.new(
   first_name: 'Patrick',
   last_name: 'Konattendpas',
-  address: 'Camping des Flots Verts, Nice, France',
+  address: '245 chem Eperon, 01160 SAINT MARTIN DU MONT, France',
   email: 'patrick@gmail.com',
   password: 'patrick',
   photo_url: 'https://arc-anglerfish-eu-central-1-prod-leparisien.s3.amazonaws.com/public/WDSEQZ3E27V37MKMD5GZ5XSV4U.jpg',
@@ -88,7 +88,7 @@ puts 'Creating Slimane'
 slimane = User.new(
   first_name: 'Slimane',
   last_name: 'Pillierdelascep',
-  address: 'SCEP - Société Cairote de Poulet , Le Caire, Egypte',
+  address: 'Grande Rue, 01350 CULOZ, France',
   email: 'slimane@gmail.com',
   password: 'slimane',
   photo_url: 'https://fr.web.img3.acsta.net/medias/nmedia/18/35/95/94/18473129.jpg',
@@ -100,7 +100,7 @@ puts 'Creating John'
 john = User.new(
   first_name: 'John',
   last_name: 'Rambo',
-  address: 'Camp de prisonnier , Pleiku, Vietnam',
+  address: '245 chem Eperon, 01160 SAINT MARTIN DU MONT, France',
   email: 'john@gmail.com',
   password: 'johnrambo',
   photo_url: 'https://www.rts.ch/2019/09/18/12/34/10718588.image?w=1280&h=720',
@@ -112,7 +112,7 @@ puts 'Creating Cetel'
 cetel = User.new(
   first_name: 'Cetel',
   last_name: 'Em',
-  address: 'Route des Buissons , Palavas-les-Flots, France',
+  address: '48 Rue Melgueil, 34250 Palavas-les-Flots, France', # Garder palavas-les-flots si possible
   email: 'cetel@gmail.com',
   password: 'cetelem',
   photo_url: 'https://images.rtl.fr/~c/770v513/rtl/www/1179101-le-bonhomme-cetelem.jpg',

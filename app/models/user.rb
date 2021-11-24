@@ -7,4 +7,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :toothbrushes, dependent: :delete_all
   has_many :bookings, dependent: :delete_all
+  
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
 end

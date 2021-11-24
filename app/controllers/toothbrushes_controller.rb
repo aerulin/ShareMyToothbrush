@@ -1,14 +1,18 @@
 class ToothbrushesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
-
   def index
     @toothbrushes = Toothbrush.all
+
+
   end
 
   def show
     @toothbrush = Toothbrush.find(params[:id])
     @user = User.find(@toothbrush.user_id)
+
+    # For map
+    @markers = [{ lat: @user.latitude, lng: @user.longitude }]
   end
 
   def new
