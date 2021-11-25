@@ -5,6 +5,7 @@ class PagesController < ApplicationController
     @toothbrushes_list = Toothbrush.all
     @toothbrushes = Toothbrush.all.last(3).reverse
     @user_id = params[:id]
+    @user = current_user
   end
 
   private

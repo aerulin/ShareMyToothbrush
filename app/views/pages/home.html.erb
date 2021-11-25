@@ -10,21 +10,21 @@
 <div class="container container-superpose">
   <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="card" id="icon-home">
+      <div class="icon-home">
         <%= image_tag "https://res.cloudinary.com/dg2an4buq/image/upload/v1637763512/ecology_bzbye7.png", alt: "", width: 120 %>
         <h2>Eco-Friendly</h2>
         <p>Use someone else's toothbrush instead of buying a new one, and make something good for our planet earth.</p>
       </div>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="card" id="icon-home">
+      <div class="icon-home">
         <%= image_tag "https://res.cloudinary.com/dg2an4buq/image/upload/v1637763512/icon-bacteria_zhvgk1.png", alt: "", width: 120 %>
         <h2>Collective Immunity</h2>
         <p>Rent your toothbrush: share your saliva and bacteria with your new buddy. Let his immune system grows and becomes stronger!</p>
       </div>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="card" id="icon-home">
+      <div class="icon-home">
         <%= image_tag "https://res.cloudinary.com/dg2an4buq/image/upload/v1637763512/nettoyage-dent_trfhnj.png", alt: "", width: 120 %>
         <h2> Select your type</h2>
         <p>Choose a soft one when you have sensitives gums, or an electric one when you need a deep complete cleaning before meeting your next Tinder's date.</p>
@@ -54,32 +54,14 @@
           <p><%= link_to "See more", toothbrush_path(toothbrush) %></p>
         </div>
         <h2 class="card-list-pricing"><%= toothbrush.price %> CHF</h2>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-list-user avatar-bordered" />
+        <%=cl_image_tag toothbrush.user.photo.key, class:"card-list-user avatar-bordered"%>
       </div>
     </div>
   <%end%>
 </div>
 
 
-<h2>All listings</h2>
-<div class="row container-flex">
-  <% @toothbrushes_list.each do |toothbrush|%>
-    <div class="card-list" style="margin-top:20px">
-      <%=cl_image_tag toothbrush.photo.key, crop: :fill%>
-      <div class="card-list-infos">
-        <div>
-          <h2><%= toothbrush.title %></h2>
-          <p><%= toothbrush.condition %></p>
-          <p><%= link_to "See more", toothbrush_path(toothbrush)%></p>
-        </div>
-        <h2 class="card-list-pricing"><%= toothbrush.price %> CHF</h2>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-list-user avatar-bordered" />
-      </div>
-    </div>
-  <%end%>
-</div>
-
-<h2>Popular status</h2>
+<h2>Best categories</h2>
 <div style="display:flex;justify-content:space-around;margin-bottom:50px">
 <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://as1.ftcdn.net/v2/jpg/04/68/42/64/1000_F_468426405_whUt1lQn9VHNXFwVQpnqkUQnRtLGyPht.jpg)">
   New
