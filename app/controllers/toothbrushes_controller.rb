@@ -3,7 +3,8 @@ class ToothbrushesController < ApplicationController
 
   def index
     @toothbrushes = Toothbrush.all
-
+    @user = current_user
+    @user_owner = User.find(@toothbrush.user_id)
 
   end
 
@@ -11,6 +12,7 @@ class ToothbrushesController < ApplicationController
     @toothbrush = Toothbrush.find(params[:id])
     @user = User.find(@toothbrush.user_id)
     @booking = Booking.new
+    @user_owner = User.find(@toothbrush.user_id)
 
     # For map
     @markers = [{ lat: @user.latitude, lng: @user.longitude }]

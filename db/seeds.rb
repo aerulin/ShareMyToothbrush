@@ -38,6 +38,7 @@ puts "Cleaning Toothbrushes database..."
 Toothbrush.destroy_all
 
 puts 'Creating Catherine'
+file = URI.open('https://res.cloudinary.com/dg2an4buq/image/upload/v1637845501/catherine_ojcqm0.jpg')
 catherine = User.new(
   first_name: 'Catherine',
   last_name: 'Leduc',
@@ -46,10 +47,12 @@ catherine = User.new(
   password: 'catherine',
   photo_url: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
 )
+catherine.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 catherine.save!
 puts 'Created Catherine !'
 
 puts 'Creating Jacques'
+file = URI.open('https://res.cloudinary.com/dg2an4buq/image/upload/v1637845642/jacques_xya10w.jpg')
 jacques = User.new(
   first_name: 'Jacques',
   last_name: 'Chichi',
@@ -58,10 +61,12 @@ jacques = User.new(
   password: 'jacques',
   photo_url: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
 )
+jacques.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 jacques.save!
 puts 'Created Jacques !'
 
   puts 'Creating Antoine'
+  file = URI.open('https://res.cloudinary.com/dg2an4buq/image/upload/v1637845829/antoine_duphmo.jpg')
 antoine = User.new(
   first_name: 'Antoine',
   last_name: 'Leblond',
@@ -70,10 +75,12 @@ antoine = User.new(
   password: 'antoine',
   photo_url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
 )
+antoine.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 antoine.save!
 puts 'Created Antoine !'
 
 puts 'Creating Patrick'
+file = URI.open('https://res.cloudinary.com/dg2an4buq/image/upload/v1637845901/patrick_cwkajv.jpg')
 patrick = User.new(
   first_name: 'Patrick',
   last_name: 'Konattendpas',
@@ -82,10 +89,12 @@ patrick = User.new(
   password: 'patrick',
   photo_url: 'https://arc-anglerfish-eu-central-1-prod-leparisien.s3.amazonaws.com/public/WDSEQZ3E27V37MKMD5GZ5XSV4U.jpg',
 )
+patrick.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 patrick.save!
 puts 'Created Patrick !'
 
 puts 'Creating Slimane'
+file = URI.open('https://res.cloudinary.com/dg2an4buq/image/upload/v1637845949/slimane_dxihjw.jpg')
 slimane = User.new(
   first_name: 'Slimane',
   last_name: 'Pillierdelascep',
@@ -94,10 +103,12 @@ slimane = User.new(
   password: 'slimane',
   photo_url: 'https://fr.web.img3.acsta.net/medias/nmedia/18/35/95/94/18473129.jpg',
 )
+slimane.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 slimane.save!
 puts 'Created Slimane !'
 
 puts 'Creating John'
+file = URI.open('https://res.cloudinary.com/dg2an4buq/image/upload/v1637846025/john_dr2143.png')
 john = User.new(
   first_name: 'John',
   last_name: 'Rambo',
@@ -106,10 +117,12 @@ john = User.new(
   password: 'johnrambo',
   photo_url: 'https://www.rts.ch/2019/09/18/12/34/10718588.image?w=1280&h=720',
 )
+john.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 john.save!
 puts 'Created John !'
 
 puts 'Creating Cetel'
+file = URI.open('https://res.cloudinary.com/dg2an4buq/image/upload/v1637846119/surchat_vcwej2.jpg')
 cetel = User.new(
   first_name: 'Cetel',
   last_name: 'Em',
@@ -118,6 +131,7 @@ cetel = User.new(
   password: 'cetelem',
   photo_url: 'https://images.rtl.fr/~c/770v513/rtl/www/1179101-le-bonhomme-cetelem.jpg',
 )
+cetel.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 cetel.save!
 puts 'Created Cetel !'
 
