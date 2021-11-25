@@ -11,17 +11,17 @@
 
   <div id="owned-tb-list">
     <% @toothbrushes.each do |toothbrush| %>
-      <div class="col-md-10 col-ld-8 align-items-stretch">
-        <div class="card text-center flex-row" style="overflow:hidden">
-          <%=cl_image_tag toothbrush.photo.key, crop: :fill%>
-          <div class="card-body">
-            <h3 class="card-title"><%= toothbrush.title %></h3>
-            <p class="card-text"><%= toothbrush.price %> CHF/day</p>
-            <div class="d-flex container-card-flex card-text-bottom">
-              <p class="card-text"><span class="color-orange">Condition</span><br> <%= toothbrush.condition %></p>
-              <p class="card-text"><span class="color-orange">Brand</span><br> <%= toothbrush.brand %></p>
-            </div>
-            <div class="btn-end btn-book"> <%= link_to "Modify", edit_toothbrush_path(toothbrush) %> </div>
+      <div class="col-md-10 align-items-stretch">
+        <div class="card flex-row" style="overflow:hidden">
+          <%=cl_image_tag toothbrush.photo.key, class:"img-fluid", style:"max-width: 35%", crop: :fill%>
+          <div class="card-body d-flex flex-column">
+            <div class="justify-content-between" style="display: flex">
+            <h4 class=""><%= toothbrush.title %></h4>
+            <button class="btn btn-primary"> <%= link_to "Modify", edit_toothbrush_path(toothbrush) %> </button>
+           </div>
+            <p class=""><span class="color-orange">Current price: </span> <%= toothbrush.price %> CHF/day</p>
+            <p class=""><span class="color-orange">Condition: </span> <%= toothbrush.condition %></p>
+            <p class=""><span class="color-orange">Brand: </span> <%= toothbrush.brand %></p>
           </div>
         </div>
       </div>
