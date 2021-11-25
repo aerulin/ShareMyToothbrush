@@ -1,38 +1,3 @@
-<!--
-<% @toothbrushes.each do |toothbrush|%>
-  <div class='card'>
-    <h4>Title: <%= toothbrush.title %></h4>
-    <h5>Description: <%= toothbrush.description %></h5>
-    <p>Condition: <%= toothbrush.condition %></p>
-    <p>Price: <%= toothbrush.price %></p>
-    <%= link_to "Book", "#", class:'btn' %>
-  </div>
-<% end %>
--->
-
-
-
-
-
-<!--
-<div class='container'>
-  <div class='title'>
-    <h1>Those are all the available Toothbrushes</h1>
-  </div>
-
-  <div class='cards-container'>
-    <% @toothbrushes.each do |toothbrush|%>
-      <div class='card'>
-        <h4>Title: <%= toothbrush.title %></h4>
-        <h5>Description: <%= toothbrush.description %></h5>
-        <p>Condition: <%= toothbrush.condition %></p>
-        <p>Price: <%= toothbrush.price %></p>
-        <%= link_to "Book", "#", class:'btn' %>
-      </div>
-    <% end %>
-  </div>
-</div>
--->
 
 <div class="banner banner-pages" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://as1.ftcdn.net/v2/jpg/02/54/15/88/1000_F_254158873_4o1cACXKRRtIaEYEcI1HP2V9F0mzQlRK.jpg);">
   <div class="container">
@@ -48,7 +13,7 @@
         <div class="col-md-4 align-items-stretch">
             <div class="card text-center" style="overflow:hidden">
             <%=cl_image_tag toothbrush.photo.key, height: 300, crop: :fill%>
-              <div class="card-body">
+              <div class="card-body card-body-listing">
                 <h3 class="card-title"><%= toothbrush.title %></h3>
                 <p class="card-text"><%= toothbrush.user.first_name %></p>
                 <p class="card-text card-price">Price: <%= toothbrush.price %> CHF</p>

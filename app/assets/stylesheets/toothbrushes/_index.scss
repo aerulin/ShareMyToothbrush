@@ -3,6 +3,8 @@
   padding: 0;
 }
 
+@import "listing_page";
+
 /********Facilities********/
 #facilities{
   background-color: #dbe5e6;
@@ -13,43 +15,4 @@
  font-weight: 900;
  font-size: 34px;
  padding-bottom: 5px;
-}
-
-.title {
-  text-align: center;
-  padding: 25px 0;
-}
-
-.title p {
-  font-size: 18px;
-}
-
-.card-body {
-  box-shadow: 0 0 20px 7px rgba(0,0,0,0.1);
-}
-
-.card {
-  margin: 20px 8px;
-}
-
-
-
-.btn-bottom {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    bottom: 40px;
-}
-
-.card-text-bottom{
-  margin-bottom:70px;
-}
-
-.row{
-  margin:0!important;
-}
-
-.card img{
-object-fit: cover;
 }
