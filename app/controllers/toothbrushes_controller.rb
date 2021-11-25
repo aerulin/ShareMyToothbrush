@@ -4,8 +4,7 @@ class ToothbrushesController < ApplicationController
 
   def index
     @toothbrushes = Toothbrush.all
-    @user = current_user
-    @user_owner = User.find(@toothbrush.user_id)
+
   end
 
   def show
