@@ -1,6 +1,45 @@
 <div class="container">
+
+  <div class="card">
+    <div class="card-body">
+        <h3 class="card-title"><%= @toothbrush.title %></h3>
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-1 align-self-center">
+            <div class="white-box text-center">
+            <%=cl_image_tag @toothbrush.photo.key, height: 400, width: 400, crop: :fill %>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-1 align-self-center">
+              <h4 class="box-title mt-2">Description</h4>
+              <p><%= @toothbrush.description %></p>
+              <h2 class="mt-5"><%= @toothbrush.price %> CHF</h2>
+              <button class="btn btn-dark btn-rounded mr-1" data-toggle="tooltip" title="" data-original-title="Add to cart">
+                  <i class="fa fa-shopping-cart"></i>
+              </button>
+              <%= link_to"Book now", new_toothbrush_booking_path(@toothbrush), class: "btn btn-primary btn-rounded"%>
+              <h3 class="box-title mt-5">More infos</h3>
+              <ul class="list-unstyled">
+                  <li><i class="fa fa-check text-success"></i>Condition: <%= @toothbrush.condition %></li>
+                  <li><i class="fa fa-check text-success"></i>Brand: <%= @toothbrush.brand %></li>
+                  <li><i class="fa fa-check text-success"></i>Category: <%= @toothbrush.category %></li>
+              </ul>
+              <!--For map-->
+              <div id="map"
+                class="col-lg-4 col-md-4 col-sm-1 align-self-center"
+                style="width: 350px; height: 350px;"
+                data-markers="<%= @markers.to_json %>"
+                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+              </div>
+          </div>
+
+<div class="banner banner-pages" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://as1.ftcdn.net/v2/jpg/02/54/15/88/1000_F_254158873_4o1cACXKRRtIaEYEcI1HP2V9F0mzQlRK.jpg);">
+  <div class="container">
+    <h1>Create a booking request</h1>
+    <p>Fill the form and enjoy a great toothbrush!</p>
+
   <div class="title-toothbrush" style="margin-top: 50px; margin-bottom: 40px; padding: 10px;">
     <h3><%= @toothbrush.title %></h3>
+
 
   </div>
 

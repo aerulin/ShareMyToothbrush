@@ -6,6 +6,18 @@ class PagesController < ApplicationController
     @toothbrushes = Toothbrush.all.last(3).reverse
     @user_id = params[:id]
     @user = current_user
+
+    # For map
+    @users_list = User.all
+
+    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    @markers = @users_list.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude
+      }
+    end
+
   end
 
   private
