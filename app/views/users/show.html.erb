@@ -1,0 +1,32 @@
+<div class="container">
+
+  <h1>Your profile</h1>
+
+  <div id="user-infos">
+    <h3><%= @user.first_name.capitalize %> <strong><%= @user.last_name.upcase %></strong></h3>
+    <p>Address: <%= @user.address %></p>
+    <p>Account email: <%= @user.email %></p>
+    <p>Password: ************ <%= link_to "Change your password", edit_user_registration_path %></p>
+  </div>
+
+  <div id="owned-tb-list">
+    <% @toothbrushes.each do |toothbrush| %>
+      <div class="col-md-10 col-ld-8 align-items-stretch">
+        <div class="card text-center flex-row" style="overflow:hidden">
+          <%=cl_image_tag toothbrush.photo.key, crop: :fill%>
+          <div class="card-body">
+            <h3 class="card-title"><%= toothbrush.title %></h3>
+            <p class="card-text"><%= toothbrush.price %> CHF/day</p>
+            <div class="d-flex container-card-flex card-text-bottom">
+              <p class="card-text"><span class="color-orange">Condition</span><br> <%= toothbrush.condition %></p>
+              <p class="card-text"><span class="color-orange">Brand</span><br> <%= toothbrush.brand %></p>
+            </div>
+            <div class="btn-end btn-book"> <%= link_to "Modify", edit_toothbrush_path(toothbrush) %> </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+
+</div>
