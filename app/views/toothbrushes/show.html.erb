@@ -1,71 +1,48 @@
-  <div class="container mt-3">
-    <div class="card-toothbrush">
-      <%=cl_image_tag @toothbrush.photo.key, height: 500, width: 400, crop: :fill %>
-      <div class="card-body ml-5">
+<div class="container mt-3">
+  <div class="card-toothbrush">
+    <%=cl_image_tag @toothbrush.photo.key, height: 500, width: 400, crop: :fill %>
+    <div class="card-body ml-5">
         <h2 class = "mt-2"><%= @toothbrush.title %></h2>
         <h4 class="box-title">Description</h4>
         <p><%= @toothbrush.description %></p>
         <h6 class="mt-5"> <%= @toothbrush.price %> CHF / JOUR</h6>
-        <!--<button class="btn btn-dark btn-rounded mr-1 " data-toggle="tooltip" title="" data-original-title="Add to cart">
-          <i class="fa fa-shopping-cart"></i>
-        </button>-->
-        <%= link_to"Book now", new_toothbrush_booking_path(@toothbrush), class: "btn btn-primary btn-rounded btn-soso"%>
+        <%= link_to"Book now", "#book", class: "btn btn-primary btn-rounded btn-soso mt-5"%>
         <h3 class="box-title mt-5">More infos</h3>
         <ul class="list-unstyled">
           <li><i>🪥</i>Condition: <%= @toothbrush.condition %></li>
           <li><i>🪥</i>Brand: <%= @toothbrush.brand %></li>
           <li><i>🪥</i>Category: <%= @toothbrush.category %></li>
         </ul>
-      </div>
     </div>
-
-
-    <div>
-      <h4 class="box-title mt-5">Owner</h4>
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.
-      </p>
-    </div>
-
+  </div>
+  <div>
+    <h4 class="box-title mt-5">About: <%= @toothbrush.user.first_name %></h4>
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    <p class="pt-2" style = "line-height: 1.5rem">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.
+    </p>
     <hr>
-    <br>
+  </div>
+  <br>
+  <h4 class="box-title mb-5 mt-3">Where pick up your toothbrush</h4>
 
-    <h4 class="box-title mb-5 mt-5">Where pick up your toothbrush</h4>
-  <!--book-->
-
-  <div class="d-flex justify-content-between" style="margin-bottom: 200px;">
-  <div id="map" style="width:350px; height: 350px;"
+  <!--map-->
+  <div class="d-flex justify-content-between" style="margin-bottom: 80px;">
+    <div id="map" style="width:600px; height: 350px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-
-
-
     <div class="box-form" style="border: 1px solid rgb(221, 221, 221); width: 500px; padding: 24px; box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;">
-    <%= simple_form_for [ @toothbrush, @booking ] do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.submit "Send request", class: "btn btn-primary btn-soso" %>
-    <% end %>
-  </div>
-
-
-      <!--map-->
-
-
-
-
+      <div style="margin-top: 30px" id="book">
+        <%= simple_form_for [ @toothbrush, @booking ] do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.submit "Send request", class: "btn btn-primary btn-soso" %>
+        <% end %>
+      </div>
     </div>
-
-
-
-
-<!--<div class="banner banner-pages" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://as1.ftcdn.net/v2/jpg/02/54/15/88/1000_F_254158873_4o1cACXKRRtIaEYEcI1HP2V9F0mzQlRK.jpg);">
-  <div class="container">
-    <h1>Create a booking request</h1>
-    <p>Fill the form and enjoy a great toothbrush!</p>
   </div>
-</div>-->
+
+
 
 </div>
 </div>
