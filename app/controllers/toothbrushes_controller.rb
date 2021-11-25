@@ -10,6 +10,7 @@ class ToothbrushesController < ApplicationController
   def show
     @toothbrush = Toothbrush.find(params[:id])
     @user = User.find(@toothbrush.user_id)
+    @booking = Booking.new
 
     # For map
     @markers = [{ lat: @user.latitude, lng: @user.longitude }]
