@@ -5,6 +5,7 @@ class PagesController < ApplicationController
     @toothbrushes_list = Toothbrush.all
     @toothbrushes = Toothbrush.all.last(3).reverse
     @user_id = params[:id]
+    @user = current_user
 
     # For map
     @users_list = User.all
@@ -16,6 +17,7 @@ class PagesController < ApplicationController
         lng: user.longitude
       }
     end
+
   end
 
   private

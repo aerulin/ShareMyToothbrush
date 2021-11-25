@@ -4,11 +4,20 @@ class ToothbrushesController < ApplicationController
 
   def index
     @toothbrushes = Toothbrush.all
+    @user = current_user
+    @user_owner = User.find(@toothbrush.user_id)
   end
 
   def show
     @toothbrush = Toothbrush.find(params[:id])
     @user = User.find(@toothbrush.user_id)
+
+    @booking = Booking.new
+    @user_owner = User.find(@toothbrush.user_id)
+
+    # For map
+    @markers = [{ lat: @user.latitude, lng: @user.longitude }]
+
   end
 
   def new
@@ -18,9 +27,28 @@ class ToothbrushesController < ApplicationController
   def create
     @toothbrush = Toothbrush.new(toothbrush_params)
     @toothbrush.user = current_user
-    # raise
-    @toothbrush.save!
-    redirect_to toothbrushes_path
+
+    @toothbrush.save
+    if @toothbrush.save
+      redirect_to toothbrushes_path
+    else
+      render :new
+    end
+
+  end
+
+  def edit
+    @toothbrush = Toothbrush.find(params[:id])
+  end
+
+  def update
+    @toothbrush = Toothbrush.find(params[:id])
+    @toothbrush.update(toothbrush_params)
+    if @toothbrush.update(toothbrush_params)
+      redirect_to user_path(current_user)
+    else
+      render :new
+    end
   end
 
   private

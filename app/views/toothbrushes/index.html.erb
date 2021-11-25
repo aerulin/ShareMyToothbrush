@@ -6,24 +6,22 @@
   </div>
 </div>
 
-
-
-    <div class="row">
-      <% @toothbrushes.each do |toothbrush|%>
-        <div class="col-md-4 align-items-stretch">
-            <div class="card text-center" style="overflow:hidden">
-            <%=cl_image_tag toothbrush.photo.key, height: 300, crop: :fill%>
-              <div class="card-body card-body-listing">
-                <h3 class="card-title"><%= toothbrush.title %></h3>
-                <p class="card-text"><%= toothbrush.user.first_name %></p>
-                <p class="card-text card-price">Price: <%= toothbrush.price %> CHF</p>
-                <div class="d-flex container-card-flex card-text-bottom">
-                  <p class="card-text"><span class="color-orange">Condition</span><br> <%= toothbrush.condition %></p>
-                  <p class="card-text"><span class="color-orange">Brand</span><br> <%= toothbrush.brand %></p>
-                </div>
-                  <div class="btn-bottom btn-book"> <%= link_to "Book", toothbrush_path(toothbrush) %> </div>
-              </div>
-            </div>
+<h2>All available toothbrushes</h2>
+<div class="row container-flex">
+  <% @toothbrushes.each do |toothbrush|%>
+    <div class="card-list" style="margin-top:20px">
+      <%=cl_image_tag toothbrush.photo.key, crop: :fill%>
+      <div class="card-list-infos">
+        <div>
+          <h2><%= toothbrush.title %></h2>
+          <p><%= toothbrush.condition %></p>
+          <p><%= link_to "See more", toothbrush_path(toothbrush)%></p>
         </div>
-      <% end %>
+        <h2 class="card-list-pricing"><%= toothbrush.price %> CHF</h2>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-list-user avatar-bordered" />
+      </div>
     </div>
+  <%end%>
+</div>
+
+<div class="container-center" style="margin:40px 0;text-align:center"><a href="/toothbrushes/new" class="btn btn-home btn-primary btn-soso">Post an add and share your toothbrush!</a></div>

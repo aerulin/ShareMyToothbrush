@@ -4,7 +4,9 @@ const bookingReceived = document.getElementById("booking-received")
 const bookingSent = document.getElementById("booking-sent")
 const labelSent = document.getElementById("label-sent")
 const labelReceived = document.getElementById("label-received")
-if (buttonCustomer) {
+
+if (buttonCustomer){
+
   buttonCustomer.addEventListener("click", (event) => {
     console.log('GOOD JOB CUSTOMER');
     bookingSent.classList.remove('hidden')
@@ -13,7 +15,9 @@ if (buttonCustomer) {
     buttonOwner.classList.add('change-button')
   });
 }
-if (buttonOwner) {
+
+if (buttonOwner){
+
   buttonOwner.addEventListener("click", (event) => {
     console.log('GOOD JOB OWNER');
     bookingSent.classList.add('hidden')
