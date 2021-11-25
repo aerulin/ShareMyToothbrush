@@ -9,7 +9,7 @@
 <h2>All available toothbrushes</h2>
 <div class="row container-flex">
   <% @toothbrushes.each do |toothbrush|%>
-    <div class="card-list" style="margin-top:20px">
+    <div class="card-list" style="margin-top:20px ">
       <%=cl_image_tag toothbrush.photo.key, crop: :fill%>
       <div class="card-list-infos">
         <div>

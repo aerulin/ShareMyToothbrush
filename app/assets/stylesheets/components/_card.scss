@@ -35,6 +35,14 @@
     margin-bottom:10px!important;
   }
 
+  .card-list {
+    opacity: 1;
+  }
+
+  .card-list:hover {
+    opacity: 0.8;
+  }
+
   .container-card-flex{
     justify-content:space-between;
     padding:0 20px;
