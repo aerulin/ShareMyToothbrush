@@ -45,16 +45,16 @@
 <h2 class="title-homepage">Newest listings</h2>
 <div class="row container-flex">
   <% @toothbrushes.each do |toothbrush|%>
-    <div class="card-trip">
+    <div class="card-list">
       <%=cl_image_tag toothbrush.photo.key, crop: :fill%>
-      <div class="card-trip-infos">
+      <div class="card-list-infos">
         <div>
           <h2><%= toothbrush.title %></h2>
           <p><%= toothbrush.condition %></p>
           <p><%= link_to "See more", toothbrush_path(toothbrush) %></p>
         </div>
-        <h2 class="card-trip-pricing"><%= toothbrush.price %> CHF</h2>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        <h2 class="card-list-pricing"><%= toothbrush.price %> CHF</h2>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-list-user avatar-bordered" />
       </div>
     </div>
   <%end%>
@@ -64,16 +64,16 @@
 <h2>All listings</h2>
 <div class="row container-flex">
   <% @toothbrushes_list.each do |toothbrush|%>
-    <div class="card-trip" style="margin-top:20px">
+    <div class="card-list" style="margin-top:20px">
       <%=cl_image_tag toothbrush.photo.key, crop: :fill%>
-      <div class="card-trip-infos">
+      <div class="card-list-infos">
         <div>
           <h2><%= toothbrush.title %></h2>
           <p><%= toothbrush.condition %></p>
           <p><%= link_to "See more", toothbrush_path(toothbrush)%></p>
         </div>
-        <h2 class="card-trip-pricing"><%= toothbrush.price %> CHF</h2>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        <h2 class="card-list-pricing"><%= toothbrush.price %> CHF</h2>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-list-user avatar-bordered" />
       </div>
     </div>
   <%end%>
