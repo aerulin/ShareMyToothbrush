@@ -15,30 +15,27 @@
   <h2>Booking sent</h2>
   <div class="row">
     <% @bookings.each do |booking|%>
-      <% if booking.status %>
-        <% status = '✔️ confirmed' %>
-      <% elsif booking.status == nil %>
-        <% status = '⏳ pending' %>
-      <% else booking.status == false %>
-        <% status = '⤫ declined' %>
-      <% end %>
-    <% booking_length = booking.end_date - booking.start_date %>
-      <div class="col-md-4 align-items-stretch">
-          <div class="card text-center">
-          <%=cl_image_tag booking.toothbrush.photo.key, height: 300, crop: :fill%>
-            <div class="card-body">
-              <p class="card-text">Booking ref: <%= booking.id %></p>
-              <p class="card-text card-status"> <%= status%></p>
-              <div class="d-flex-wrap container-card-flex card-text-bottom">
-                <p class="card-text"><span class="color-orange">Start date</span><br> <%= booking.start_date %></p>
-                <p class="card-text"><span class="color-orange">End date</span><br> <%= booking.end_date %></p>
-                <p class="card-text"><span class="color-orange">Booking lenght</span><br> <%= booking_length.to_i %> days</p>
-                <p class="card-text"><span class="color-orange">Total price</span><br> <%= booking_length.to_i * booking.toothbrush.price.to_i %> CHF</p>
-                <%= link_to "Cancel request",decline_bookings_path(booking), class:'btn btn-danger' %>
+      <% booking_length = booking.end_date - booking.start_date %>
+        <div class="col-md-4 align-items-stretch">
+            <div class="card text-center">
+            <%=cl_image_tag booking.toothbrush.photo.key, height: 300, crop: :fill%>
+              <div class="card-body">
+                <p class="card-text">Booking ref: <%= booking.id %></p>
+                <p class="card-text card-status"> <%= booking.status%></p>
+                <div class="d-flex-wrap container-card-flex card-text-bottom">
+                  <p class="card-text"><span class="color-orange">Start date</span><br> <%= booking.start_date %></p>
+                  <p class="card-text"><span class="color-orange">End date</span><br> <%= booking.end_date %></p>
+                  <p class="card-text"><span class="color-orange">Booking lenght</span><br> <%= booking_length.to_i + 1 %> day(s)</p>
+                  <p class="card-text"><span class="color-orange">Total price</span><br> <%= (booking_length.to_i + 1) * booking.toothbrush.price.to_i %> CHF</p>
+                  <% if booking.status == "⤫ cancelled" %>
+                    <p class='bg-light'>Your already <strong>cancelled</strong> this request.</p>
+                  <% else %>
+                  <%= link_to "Cancel request",cancel_bookings_path(booking), class:'btn btn-warning' %>
+                  <% end %>
+                </div>
               </div>
             </div>
-          </div>
-      </div>
+        </div>
     <% end %>
   </div>
 </div>
@@ -47,13 +44,6 @@
   <h2>Booking requests received</h2>
   <div class="row">
     <% @bookings_owner.each do |booking|%>
-      <% if booking.status %>
-        <% status = '✔️ confirmed' %>
-      <% elsif booking.status == nil %>
-        <% status = '⏳ pending' %>
-      <% else booking.status == false %>
-        <% status = '⤫ declined' %>
-      <% end %>
     <% booking_length = booking.end_date - booking.start_date %>
       <div class="col-md-4 align-items-stretch">
           <div class="card text-center">
@@ -61,16 +51,16 @@
             <div class="card-body">
               <h3 class="card-title">Booking by: <%= booking.user.first_name %></h3>
               <p class="card-text">Booking ref: <%= booking.id %></p>
-              <p class="card-text card-status"><%= status %></p>
+              <p class="card-text card-status"><%= booking.status %></p>
               <div class="d-flex-wrap container-card-flex card-text-bottom">
                 <p class="card-text"><span class="color-orange">Start date</span><br> <%= booking.start_date %></p>
                 <p class="card-text"><span class="color-orange">End date</span><br> <%= booking.end_date %></p>
-                <p class="card-text"><span class="color-orange">Booking lenght</span><br> <%= booking_length.to_i %> days</p>
-                <p class="card-text"><span class="color-orange">Your revenue</span><br> <%= booking_length.to_i * booking.toothbrush.price.to_i %> CHF</p>
-                <% if status =='⏳ pending' %>
+                <p class="card-text"><span class="color-orange">Booking lenght</span><br> <%= booking_length.to_i + 1 %> day(s)</p>
+                <p class="card-text"><span class="color-orange">Your revenue</span><br> <%= (booking_length.to_i + 1) * booking.toothbrush.price.to_i %> CHF</p>
+                <% if booking.status =='⏳ pending' %>
                   <%= link_to "Accept",validate_bookings_path(booking), class:'btn btn-success' %>
                   <%= link_to "Decline",decline_bookings_path(booking), class:'btn btn-danger' %>
-                <% elsif status =='✔️ confirmed' %>
+                <% elsif booking.status =='✔️ confirmed' %>
                   <%= link_to "Decline*",decline_bookings_path(booking), class:'btn btn-danger' %>
                 <% else %>
                   <p class='bg-light'>Your already <strong>declined</strong> this request.</p>

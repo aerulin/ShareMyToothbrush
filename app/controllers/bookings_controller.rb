@@ -26,14 +26,21 @@ class BookingsController < ApplicationController
 
   def validate
     @booking = Booking.find(params[:format])
-    @booking.status = true
+    @booking.status = "✔️ confirmed"
     @booking.save!
     redirect_to bookings_path
   end
 
-    def decline
+  def decline
     @booking = Booking.find(params[:format])
-    @booking.status = false
+    @booking.status = "⤫ declined"
+    @booking.save!
+    redirect_to bookings_path
+  end
+
+  def cancel
+    @booking = Booking.find(params[:format])
+    @booking.status = "⤫ cancelled"
     @booking.save!
     redirect_to bookings_path
   end
