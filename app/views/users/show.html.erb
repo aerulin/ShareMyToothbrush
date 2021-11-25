@@ -1,32 +1,71 @@
-<div class="container">
+<div class="container mt-3">
 
-  <h1>Your profile</h1>
+  <h3>Your profile</h3>
+  <br>
 
-  <div id="user-infos">
-    <h3><%= @user.first_name.capitalize %> <strong><%= @user.last_name.upcase %></strong></h3>
-    <p>Address: <%= @user.address %></p>
-    <p>Account email: <%= @user.email %></p>
-    <p>Password: ************ <%= link_to "Change your password", edit_user_registration_path %></p>
+  <div id="user-data">
+
+    <div class="mb-1 py-3 card card-body flex-row justify-content-between col-md-10" id="user-info">
+      <div class="d-flex flex-column" style="max-width: 65%">
+        <h5><%= @user.first_name.capitalize %> <strong><%= @user.last_name.upcase %></strong></h5>
+        <p class="mb-0">Address: <%= @user.address %></p>
+      </div>
+      <div>
+        <%= link_to "✍️ Update your infos", edit_user_path, style:"width: 30%" %></p>
+      </div>
+    </div>
+
+    <div class="mb-1 py-3 card card-body flex-row justify-content-between col-md-10" id="user-login">
+      <div class="d-flex flex-column" style="max-width: 65%">
+        <p>Account email: <%= @user.email %></p>
+        <p class="mb-0"> Password: ************ </p>
+      </div>
+      <div>
+        <%= link_to "🔐 Change your password", edit_user_registration_path, style:"width: 30%" %>
+      </div>
+    </div>
+    <br>
+    <hr size="1" width="83.3%" color="#6c757d">
   </div>
 
-  <div id="owned-tb-list">
-    <% @toothbrushes.each do |toothbrush| %>
-      <div class="col-md-10 align-items-stretch">
-        <div class="card flex-row" style="overflow:hidden">
-          <%=cl_image_tag toothbrush.photo.key, class:"img-fluid", style:"max-width: 35%", crop: :fill%>
-          <div class="card-body d-flex flex-column">
-            <div class="justify-content-between" style="display: flex">
-            <h4 class=""><%= toothbrush.title %></h4>
-            <button class="btn btn-primary"> <%= link_to "Modify", edit_toothbrush_path(toothbrush) %> </button>
-           </div>
-            <p class=""><span class="color-orange">Current price: </span> <%= toothbrush.price %> CHF/day</p>
-            <p class=""><span class="color-orange">Condition: </span> <%= toothbrush.condition %></p>
-            <p class=""><span class="color-orange">Brand: </span> <%= toothbrush.brand %></p>
+
+  <% if @toothbrushes.present? %>
+    <br>
+    <h3>My Toothbrushes</h3>
+    <br>
+
+    <div class ="mb-3" id="owned-tb-list">
+      <% @toothbrushes.each do |toothbrush| %>
+        <div class="col-md-10 align-items-stretch p-0">
+          <div class="card flex-row" style="overflow:hidden">
+            <%=cl_image_tag toothbrush.photo.key, class:"img-fluid", style:"max-width: 35%", crop: :fill%>
+            <div class="card-body d-flex flex-column">
+              <h4 class=""><%= toothbrush.title %></h4>
+              <p><span class="color-orange">Current price: </span> <%= toothbrush.price %> CHF/day</p>
+              <p><span class="color-orange">Condition: </span> <%= toothbrush.condition %></p>
+              <p style="margin-bottom: 0px"><span class="color-orange">Brand: </span> <%= toothbrush.brand %></p>
+              <div class="d-flex justify-content-end" style="width=100%">
+                <button class="btn btn-outline-secondary" style="margin-right: 10px"> <%= link_to "Modify", edit_toothbrush_path(toothbrush), style:"color:#6c757d " %> </button>
+                <button class="btn btn-outline-danger">
+                  <%= link_to "Delete",
+                    toothbrush_path(toothbrush),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" },
+                  style:"color:#FD1015" %> </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
-  </div>
-
+      <% end %>
+    </div>
+  <% else %>
+    <div class="col-md-10 text-center mb-3">
+      <br>
+      <h3 class="mb-4">You don't have any toothbrush available</h3>
+      <h5 class="mb-4">Make yours available today!</h5>
+      <%= link_to "🪥 Add yours today", new_toothbrush_path, class:"btn btn-primary mb-4" %>
+      <br>
+    </div>
+  <% end %>
 
 </div>

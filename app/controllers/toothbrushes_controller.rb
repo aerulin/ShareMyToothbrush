@@ -30,7 +30,7 @@ class ToothbrushesController < ApplicationController
 
     @toothbrush.save
     if @toothbrush.save
-      redirect_to toothbrushes_path
+      redirect_to toothbrush_path(@toothbrush)
     else
       render :new
     end
@@ -49,6 +49,12 @@ class ToothbrushesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @toothbrush = Toothbrush.find(params[:id])
+    @toothbrush.destroy
+    redirect_to user_path(current_user)
   end
 
   private
