@@ -53,7 +53,7 @@ puts 'Creating Jacques'
 jacques = User.new(
   first_name: 'Jacques',
   last_name: 'Chichi',
-  address: 'lieu-dit Tuilerie, 01330 VILLARS LES DOMBES, France',
+  address: 'Rue de la Berra 22, Bulle, Suisse',
   email: 'jacques@gmail.com',
   password: 'jacques',
   photo_url: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
@@ -77,7 +77,7 @@ puts 'Creating Patrick'
 patrick = User.new(
   first_name: 'Patrick',
   last_name: 'Konattendpas',
-  address: '245 chem Eperon, 01160 SAINT MARTIN DU MONT, France',
+  address: 'Masseret, 19510 MASSERET, France',
   email: 'patrick@gmail.com',
   password: 'patrick',
   photo_url: 'https://arc-anglerfish-eu-central-1-prod-leparisien.s3.amazonaws.com/public/WDSEQZ3E27V37MKMD5GZ5XSV4U.jpg',
@@ -101,7 +101,7 @@ puts 'Creating John'
 john = User.new(
   first_name: 'John',
   last_name: 'Rambo',
-  address: '245 chem Eperon, 01160 SAINT MARTIN DU MONT, France',
+  address: '11 av Gabriel Reynaud, 13330 PÉLISSANNE, France',
   email: 'john@gmail.com',
   password: 'johnrambo',
   photo_url: 'https://www.rts.ch/2019/09/18/12/34/10718588.image?w=1280&h=720',
