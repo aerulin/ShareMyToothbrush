@@ -4,6 +4,8 @@ const bookingReceived = document.getElementById("booking-received")
 const bookingSent = document.getElementById("booking-sent")
 const labelSent = document.getElementById("label-sent")
 const labelReceived = document.getElementById("label-received")
+const cardSent = document.getElementById("card-booking")
+const cardReceived = document.getElementById("card-request")
 
 if (buttonCustomer){
 
@@ -13,6 +15,8 @@ if (buttonCustomer){
     bookingReceived.classList.add('hidden')
     buttonCustomer.classList.remove('change-button')
     buttonOwner.classList.add('change-button')
+    cardSent.remove('hidden')
+    cardReceived.add('hidden')
   });
 }
 
@@ -24,5 +28,7 @@ if (buttonOwner){
     bookingReceived.classList.remove('hidden')
     buttonCustomer.classList.add('change-button')
     buttonOwner.classList.remove('change-button')
+    cardSent.add('hidden')
+    cardReceived.remove('hidden')
   });
 }

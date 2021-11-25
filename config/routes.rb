@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       collection do
         get 'validate'
         get 'decline'
+        get 'cancel'
       end
     end
 end
