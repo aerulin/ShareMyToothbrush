@@ -1,0 +1,16 @@
+<div class="banner banner-pages" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://as1.ftcdn.net/v2/jpg/02/54/15/88/1000_F_254158873_4o1cACXKRRtIaEYEcI1HP2V9F0mzQlRK.jpg);">
+  <div class="container">
+    <h1>Edit your <strong>Informations</strong></h1>
+  </div>
+</div>
+<div class='container container-new-form'>
+  <div class="form-container">
+    <%= simple_form_for @user do |f| %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :address %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit "Update", class: "btn btn-primary btn-home" %>
+    <% end %>
+  </div>
+</div>
