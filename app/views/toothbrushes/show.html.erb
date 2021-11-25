@@ -4,10 +4,10 @@
 
   </div>
 
-  <div class="row">
+  <div>
     <div class="card-toothbrush">
       <%=cl_image_tag @toothbrush.photo.key, height: 500, width: 400, crop: :fill %>
-      <div class="card-body">
+      <div class="card-body ml-5">
         <h4 class="box-title mt-5">Description</h4>
         <p><%= @toothbrush.description %></p>
         <h6 class="mt-5"> <%= @toothbrush.price %> CHF / JOUR</h6>
@@ -34,7 +34,18 @@
 
     <hr>
     <br>
+
+    <h4 class="box-title mb-5 mt-5">Where pick up your toothbrush</h4>
   <!--book-->
+
+  <div class="d-flex justify-content-between" style="margin-bottom: 200px;">
+  <div id="map" style="width:350px; height: 350px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
+
+
     <div class="box-form" style="border: 1px solid rgb(221, 221, 221); width: 500px; padding: 24px; box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;">
     <%= simple_form_for [ @toothbrush, @booking ] do |f| %>
     <%= f.input :start_date %>
@@ -42,12 +53,13 @@
     <%= f.submit "Send request", class: "btn btn-primary btn-soso" %>
     <% end %>
   </div>
-  <br>
+
+
       <!--map-->
-    <h4 class="box-title mt-5">Where pick up your toothbrush</h4>
-    <div id="map" style="auto; height: 350px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+
+
+
+
     </div>
 
 
