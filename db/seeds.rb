@@ -125,10 +125,10 @@ puts 'Creating TB 1'
 file = URI.open('https://res.cloudinary.com/dg2an4buq/image/upload/v1637662951/360_F_295136365_8FlBKW1zOvvoT13Uwa3NsJ2tiguWoIhn_si6eo5_cqvf4y.jpg')
 toothbrush = Toothbrush.new(
   title: 'My lovely Toothbrush',
-  condition: 'Acceptable',
   description: 'This is a very nice toothbrush that helped me a lot',
   brand: 'Fluodent',
   user: catherine,
+  condition: 'Used',
   category: 'Vintage',
   price: 7
 )
@@ -141,11 +141,11 @@ puts 'Creating TB 2'
 file = URI.open('https://res.cloudinary.com/dg2an4buq/image/upload/v1637662949/pexels-ricardo-rojas-3588229_bidqwm_vzqsja.jpg')
 toothbrush = Toothbrush.new(
   title: 'A warrior Toothbrush',
-  condition: 'As good as new',
   description: 'When I was fighting in Vietnam, this toothbrush saved my life more than once',
   brand: 'UncleSam',
   user: john,
-  category: 'Vintage',
+  condition: 'End of life',
+  category: 'Eco-friendly',
   price: 8
 )
 toothbrush.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -156,11 +156,11 @@ puts 'Creating TB 3'
 file = URI.open('https://res.cloudinary.com/dg2an4buq/image/upload/v1637662949/used-toothbrush_wzv3mh_swuhio.jpg')
 toothbrush = Toothbrush.new(
   title: 'Great to brush bushes',
-  condition: 'Poor',
   description: 'A toothbrush for a tree can only be good for human',
   brand: 'MyGreenLeaf',
   user: cetel,
-  category: 'Manual',
+  condition: 'Bad',
+  category: 'Famous',
   price: 3
 )
 toothbrush.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -172,11 +172,11 @@ puts 'Creating TB 4'
 file = URI.open('https://res.cloudinary.com/dg2an4buq/image/upload/v1637662949/used-toothbrush-science-photo-library_v7rd7e_tf9l6e.jpg')
 toothbrush = Toothbrush.new(
   title: 'Professional Toothbrush',
-  condition: 'Acceptable',
   description: 'The best one to brush the teeth of my chickens',
   brand: 'ChickenWithTeeth',
   user: slimane,
-  category: 'Animals',
+  condition: 'Used',
+  category: 'Famous',
   price: 3
 )
 toothbrush.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -187,11 +187,11 @@ puts 'Creating TB 5'
 file = URI.open('https://res.cloudinary.com/dg2an4buq/image/upload/v1637662950/old_used_toothbrush_with_worn_out_bristles_g8lzpd_gnr709.webp')
 toothbrush = Toothbrush.new(
   title: 'My go-to Toothbrush that I love',
-  condition: 'Great',
   description: "Day and night I feel like I'm brushin' brushin' and brushin'",
   brand: 'Colgate',
   user: slimane,
-  category: 'Rare',
+  condition: 'New',
+  category: 'Plastic',
   price: 12
 )
 toothbrush.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')

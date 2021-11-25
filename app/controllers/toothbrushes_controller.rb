@@ -23,10 +23,23 @@ class ToothbrushesController < ApplicationController
   def create
     @toothbrush = Toothbrush.new(toothbrush_params)
     @toothbrush.user = current_user
-    # raise
     @toothbrush.save
     if @toothbrush.save
       redirect_to toothbrushes_path
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @toothbrush = Toothbrush.find(params[:id])
+  end
+
+  def update
+    @toothbrush = Toothbrush.find(params[:id])
+    @toothbrush.update(toothbrush_params)
+    if @toothbrush.update(toothbrush_params)
+      redirect_to user_path(current_user)
     else
       render :new
     end
