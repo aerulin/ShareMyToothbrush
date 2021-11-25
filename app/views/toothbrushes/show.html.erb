@@ -23,13 +23,6 @@
                   <li><i class="fa fa-check text-success"></i>Category: <%= @toothbrush.category %></li>
               </ul>
           </div>
-          <!--For map-->
-          <div id="map"
-            class="col-lg-4 col-md-4 col-sm-1 align-self-center"
-            style="width: 350px; height: 350px;"
-            data-markers="<%= @markers.to_json %>"
-            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-          </div>
 
 
 <div class="banner banner-pages" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://as1.ftcdn.net/v2/jpg/02/54/15/88/1000_F_254158873_4o1cACXKRRtIaEYEcI1HP2V9F0mzQlRK.jpg);">
@@ -46,6 +39,12 @@
       <%= f.submit "Send request", class: "btn btn-primary btn-home" %>
     <% end %>
   </div>
+          <!--For map-->
+          <div id="map"
+            style="width: 350px; height: 350px;"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
 </div>
 
 
