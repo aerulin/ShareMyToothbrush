@@ -1,81 +1,84 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://as1.ftcdn.net/v2/jpg/02/54/15/88/1000_F_254158873_4o1cACXKRRtIaEYEcI1HP2V9F0mzQlRK.jpg);height:80vh;">
-  <div class="container">
-    <h1>Share my <strong>toothbrush</strong></h1>
-    <p>Find the right toothbrush you need around the world, or rent yours to earn money!</p>
-    <a class="btn btn-primary btn-home btn-soso" href="#">Be ecologic, share your toothbrush!</a>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://as1.ftcdn.net/v2/jpg/02/54/15/88/1000_F_254158873_4o1cACXKRRtIaEYEcI1HP2V9F0mzQlRK.jpg);height:80vh;">
+    <div class="container">
+      <h1>Share my <strong>toothbrush</strong></h1>
+      <p>Find the right toothbrush you need around the world, or rent yours to earn money!</p>
+      <a class="btn btn-primary btn-home btn-soso" href="#">Be ecologic, share your toothbrush!</a>
+    </div>
   </div>
-</div>
 
-<!--template responsive une fois rempli avec contenu desiré juste mettre 100vh est c'est tout bon :) normalement... -->
-<div class="container container-superpose">
-  <div class="row">
+<div class="container">
+  <!--template responsive une fois rempli avec contenu desiré juste mettre 100vh est c'est tout bon :) normalement... -->
+  <div class="container container-superpose">
+    <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="icon-home">
-        <%= image_tag "https://res.cloudinary.com/dg2an4buq/image/upload/v1637763512/ecology_bzbye7.png", alt: "", width: 120 %>
-        <h2>Eco-Friendly</h2>
-        <p>Use someone else's toothbrush instead of buying a new one, and make something good for our planet earth.</p>
+        <div class="icon-home">
+          <%= image_tag "https://res.cloudinary.com/dg2an4buq/image/upload/v1637763512/ecology_bzbye7.png", alt: "", width: 120 %>
+          <h2>Eco-Friendly</h2>
+          <p>Use someone else's toothbrush instead of buying a new one, and make something good for our planet earth.</p>
+        </div>
       </div>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="icon-home">
-        <%= image_tag "https://res.cloudinary.com/dg2an4buq/image/upload/v1637763512/icon-bacteria_zhvgk1.png", alt: "", width: 120 %>
-        <h2>Collective Immunity</h2>
-        <p>Rent your toothbrush: share your saliva and bacteria with your new buddy. Let his immune system grows and becomes stronger!</p>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="icon-home">
+          <%= image_tag "https://res.cloudinary.com/dg2an4buq/image/upload/v1637763512/icon-bacteria_zhvgk1.png", alt: "", width: 120 %>
+          <h2>Collective Immunity</h2>
+          <p>Rent your toothbrush: share your saliva and bacteria with your new buddy. Let his immune system grows and becomes stronger!</p>
+        </div>
       </div>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="icon-home">
-        <%= image_tag "https://res.cloudinary.com/dg2an4buq/image/upload/v1637763512/nettoyage-dent_trfhnj.png", alt: "", width: 120 %>
-        <h2> Select your type</h2>
-        <p>Choose a soft one when you have sensitives gums, or an electric one when you need a deep complete cleaning before meeting your next Tinder's date.</p>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="icon-home">
+          <%= image_tag "https://res.cloudinary.com/dg2an4buq/image/upload/v1637763512/nettoyage-dent_trfhnj.png", alt: "", width: 120 %>
+          <h2> Select your type</h2>
+          <p>Choose a soft one when you have sensitives gums, or an electric one when you need a deep complete cleaning before meeting your next Tinder's date.</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="container container-text">
-  <p>Welcome to ShareMyToothBrush.com! On this plateform you can easily rent your toothbrush, or find the perfect one for you, for a determined period!
-  Find the toothbrush you need, wherever you need it! Choose between differents categories, status or prices, near your actual position.
-  Use it for a day or more, and then bring it back to his owner. Test as many as toothbrushes you want, without buying anything, just renting!
-  <br>Enjoy!</p>
+  <div class="container container-text">
+    <p>Welcome to ShareMyToothBrush.com! On this plateform you can easily rent your toothbrush, or find the perfect one for you, for a determined period!
+    Find the toothbrush you need, wherever you need it! Choose between differents categories, status or prices, near your actual position.
+    Use it for a day or more, and then bring it back to his owner. Test as many as toothbrushes you want, without buying anything, just renting!
+    <br>Enjoy!</p>
   </div>
 
   <div class="container-center" style="margin:40px 0;text-align:center"><a href="/toothbrushes/new" class="btn btn-home btn-primary btn-soso">Post an add and share your toothbrush!</a></div>
 
-<h2 class="title-homepage">Newest listings</h2>
-<div class="row container-flex">
-  <% @toothbrushes.each do |toothbrush|%>
-    <div class="card-list">
-      <%=cl_image_tag toothbrush.photo.key, crop: :fill%>
-      <div class="card-list-infos">
-        <div>
-          <h2><%= toothbrush.title %></h2>
-          <p><%= toothbrush.condition %></p>
-          <p><%= link_to "See more", toothbrush_path(toothbrush) %></p>
+  <h2 class="title-homepage">Newest listings</h2>
+  <div class="row container-flex">
+    <% @toothbrushes.each do |toothbrush|%>
+      <div class="card-list">
+        <%=cl_image_tag toothbrush.photo.key, crop: :fill%>
+        <div class="card-list-infos">
+          <div>
+            <h2><%= toothbrush.title %></h2>
+            <p><%= toothbrush.condition %></p>
+            <p><%= link_to "See more", toothbrush_path(toothbrush) %></p>
+          </div>
+          <h2 class="card-list-pricing"><%= toothbrush.price %> CHF</h2>
+          <%=cl_image_tag toothbrush.user.photo.key, class:"card-list-user avatar-bordered"%>
         </div>
-        <h2 class="card-list-pricing"><%= toothbrush.price %> CHF</h2>
-        <%=cl_image_tag toothbrush.user.photo.key, class:"card-list-user avatar-bordered"%>
       </div>
+    <%end%>
+  </div>
+
+  <div class="best-category">
+    <h2>Best categories</h2>
+    <div style="display:flex;justify-content:space-around;margin-bottom:50px">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://as1.ftcdn.net/v2/jpg/04/68/42/64/1000_F_468426405_whUt1lQn9VHNXFwVQpnqkUQnRtLGyPht.jpg)">
+        New </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://as2.ftcdn.net/v2/jpg/02/29/87/43/1000_F_229874341_QxzTtvmkGqCTan0hAjjTKU6NzALg7NKO.jpg)">
+        Acceptable </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://as1.ftcdn.net/v2/jpg/04/40/82/22/1000_F_440822211_AWEemeEMtLTfjfn0KrbkASQqjj28uKiM.jpg)">
+        Poor </div>
     </div>
-  <%end%>
-</div>
+  </div>
+  <!--For map-->
 
 
-<h2>Best categories</h2>
-<div style="display:flex;justify-content:space-around;margin-bottom:50px">
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://as1.ftcdn.net/v2/jpg/04/68/42/64/1000_F_468426405_whUt1lQn9VHNXFwVQpnqkUQnRtLGyPht.jpg)">
-  New
-</div>
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://as2.ftcdn.net/v2/jpg/02/29/87/43/1000_F_229874341_QxzTtvmkGqCTan0hAjjTKU6NzALg7NKO.jpg)">
-  Acceptable
-</div>
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://as1.ftcdn.net/v2/jpg/04/40/82/22/1000_F_440822211_AWEemeEMtLTfjfn0KrbkASQqjj28uKiM.jpg)">
-  Poor
-</div>
-<!--For map-->
-<div id="map"
-  style="width: 100%; height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
+  <div class="mb-3"id="map"
+    style="width: 100%; height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
 </div>
