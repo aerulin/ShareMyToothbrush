@@ -34,8 +34,8 @@
     <div class="box-form" style="border: 1px solid rgb(221, 221, 221); width: 500px; padding: 24px; box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;">
       <div style="margin-top: 30px" id="book">
         <%= simple_form_for [ @toothbrush, @booking ] do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
+        <%= f.input :start_date, as: :date, html5: true %>
+        <%= f.input :end_date, as: :date, html5: true %>
         <%= f.submit "Send request", class: "btn btn-primary btn-soso" %>
         <% end %>
       </div>

@@ -10,6 +10,9 @@
 <div class="container my-button d-flex align-items-center">
   <button class='my-custom-button' id='btn-customer'>Customer</button>
   <button class='my-custom-button change-button' id='btn-owner'>Owner</button>
+  <% if @notif_number > 0 %>
+    <span class="badge badge-pill badge-danger badge-position"><%= @notif_number %></span>
+  <% end %>
 </div>
 
 <div class='container' id='booking-sent'>
@@ -32,6 +35,8 @@
           </div>
           <% if booking.status == "⤫ cancelled" %>
               <p class='bg-light mb-0'>Your already <strong>cancelled</strong> this request.</p>
+          <% elsif booking.status == "⤫ declined" %>
+              <p class='bg-light mb-0'>The owner <strong>declined</strong> your request.</p>
           <% else %>
             <%= link_to "Cancel request",cancel_bookings_path(booking), class:'btn btn-warning' %>
           <% end %>
