@@ -3,13 +3,16 @@ class ToothbrushesController < ApplicationController
 
 
   def index
-    @toothbrushes = Toothbrush.all
+    if params[:category].present?
+      @toothbrushes = Toothbrush.where(category: params[:category].capitalize)
+    else
+      @toothbrushes = Toothbrush.all
+    end
   end
 
   def show
     @toothbrush = Toothbrush.find(params[:id])
     @user = User.find(@toothbrush.user_id)
-
     @booking = Booking.new
     @user_owner = User.find(@toothbrush.user_id)
 
