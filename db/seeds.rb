@@ -178,7 +178,7 @@ toothbrush2 = Toothbrush.new(
   brand: 'UncleSam',
   user: john,
   condition: 'End of life',
-  category: 'Eco-friendly',
+  category: 'Plastic',
   price: 8
 )
 toothbrush2.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -194,7 +194,7 @@ toothbrush3 = Toothbrush.new(
   brand: 'MyGreenLeaf',
   user: cetel,
   condition: 'Bad',
-  category: 'Famous',
+  category: 'Plastic',
   price: 3
 )
 toothbrush3.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -211,7 +211,7 @@ toothbrush4 = Toothbrush.new(
   brand: 'ChickenWithTeeth',
   user: slimane,
   condition: 'Used',
-  category: 'Famous',
+  category: 'Vintage',
   price: 3
 )
 toothbrush4.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -227,7 +227,7 @@ toothbrush5 = Toothbrush.new(
   brand: 'Colgate',
   user: slimane,
   condition: 'New',
-  category: 'Plastic',
+  category: 'Vintage',
   price: 12
 )
 toothbrush5.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -254,7 +254,7 @@ puts 'TB 6 created'
 puts 'Creating TB 7'
 file = URI.open('https://res.cloudinary.com/dg2an4buq/image/upload/v1637919140/brosse2_znp7ye.jpg')
 toothbrush7 = Toothbrush.new(
-  title: 'Survivalist defense toothbrush',
+  title: 'Survivalist toothbrush',
   description: "Stuck in a fight? Be a lion ready to attack with this electric weapon",
   brand: 'Dentlux',
   user: john,
@@ -302,7 +302,7 @@ puts 'TB 9 created'
 puts 'Create bookings'
 40.times do
   startdate = rand(10.years).seconds.ago
-  enddate = startdate + rand(4)*3600*24
+  enddate = startdate + (rand(4) * 3600 * 24)
   booking = Booking.new(
     start_date: startdate,
     end_date: enddate,
