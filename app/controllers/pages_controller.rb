@@ -6,6 +6,7 @@ class PagesController < ApplicationController
     @toothbrushes = Toothbrush.all.last(3).reverse
     @user = current_user
     @vintage = Toothbrush.where(category: "Vintage")
+
     # For map
     @users_list = User.all
 
