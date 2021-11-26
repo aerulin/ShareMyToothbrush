@@ -2,7 +2,7 @@
     <div class="container">
       <h1>Share my <strong>toothbrush</strong></h1>
       <p>Find the right toothbrush you need around the world, or rent yours to earn money!</p>
-      <a class="btn btn-primary btn-home btn-soso" href="#">Be ecologic, share your toothbrush!</a>
+      <a class="btn btn-primary btn-home btn-soso" href="#">Be eco-friendly, share your toothbrush!</a>
     </div>
   </div>
 
@@ -64,12 +64,12 @@
   <div class="best-category">
     <h2>Best categories</h2>
     <div style="display:flex;justify-content:space-around;margin-bottom:50px">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://as1.ftcdn.net/v2/jpg/04/68/42/64/1000_F_468426405_whUt1lQn9VHNXFwVQpnqkUQnRtLGyPht.jpg)">
-        New </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://as2.ftcdn.net/v2/jpg/02/29/87/43/1000_F_229874341_QxzTtvmkGqCTan0hAjjTKU6NzALg7NKO.jpg)">
-        Acceptable </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://as1.ftcdn.net/v2/jpg/04/40/82/22/1000_F_440822211_AWEemeEMtLTfjfn0KrbkASQqjj28uKiM.jpg)">
-        Poor </div>
+      <div class="card-category card-cat-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://as2.ftcdn.net/v2/jpg/03/98/34/83/1000_F_398348308_yUCYBw6T7RYX4yTAMGee9fWdLCKbHYW5.jpg)">
+        <%=link_to 'Eco-Friendly', toothbrushes_path(category: "eco-friendly")%> </div>
+      <div class="card-category card-cat-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://as1.ftcdn.net/v2/jpg/00/00/43/68/1000_F_436857_Vm9o6Gq0oTlZsoTYDA6734EgymR1XT.jpg)">
+        <%= link_to "Vintage", toothbrushes_path(category: "vintage") %></div>
+      <div class="card-category card-cat-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://as1.ftcdn.net/v2/jpg/02/55/71/04/1000_F_255710484_K62V2GwfP4OxmJNHo9KRUIyDAM4h4QNF.jpg)">
+        <%=link_to 'Electric', toothbrushes_path(category: "electric")%></div>
     </div>
   </div>
   <!--For map-->
