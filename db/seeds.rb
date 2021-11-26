@@ -308,7 +308,7 @@ puts 'Create bookings'
     end_date: enddate,
     toothbrush: toothbrush_array.sample,
     user: user_array.sample,
-    status: ["⏳ pending", "✔️ confirmed", "⤫ declined", "⤫ cancelled"].sample
+    status: ["⏳ pending", "⏳ pending", "⏳ pending", "✔️ confirmed", "⤫ declined", "⤫ cancelled"].sample
   )
   booking.save!
 end
