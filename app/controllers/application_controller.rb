@@ -9,9 +9,11 @@ class ApplicationController < ActionController::Base
   end
 
   def num_notif
+    if user_signed_in?
     @bookings_owner = Booking.joins(:toothbrush).where(toothbrushes: { user_id: current_user.id })
     @pending_requests = @bookings_owner.where(status:"⏳ pending" )
     @notif_number = @pending_requests.count
+    end
   end
 
   #   bookings = Booking.where(status: "⏳ pending")
